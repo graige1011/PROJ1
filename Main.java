@@ -8,9 +8,12 @@ public class Main {
 
         System.out.println("Voer uw naam in");
         String naam = scanner.nextLine();
-        if(naam.equals("Graige") || naam.equals("graige"))
+        if(naam.equals("Graige") || naam.equals("Graige"))
         {
             System.out.println("Graige pretu please bai foi djaki");
+        }
+        if(naam.equals("Keanu"){
+            System.out.println("Bai laba bo wok");
         }
         else {
             System.out.println("Welkom!");
