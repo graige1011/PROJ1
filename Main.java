@@ -5,7 +5,7 @@ public class Main {
         int nine = 69;
         System.out.println("Graige bakoba master"+nine);
 
-        System.out.println("KFC blockparty");
+        System.out.println("KFC blockparty werkt dit");
 
     }
 }
