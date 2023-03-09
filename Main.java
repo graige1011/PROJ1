@@ -1,4 +1,5 @@
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,6 @@ public class Main {
             System.out.println("Welkom!");
         }
 
-
+        System.out.println("Heyyy je bent mooit watsjenaam");
     }
 }
