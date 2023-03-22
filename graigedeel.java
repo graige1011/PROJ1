@@ -65,6 +65,6 @@ class Offerte{
 }
 public class graigedeel {
     public static void main(String[] args) {
-        Offerte offerte1 = new Offerte(001)
+        Offerte offerte1 =  new Offerte(001,onderdeel,"22-03-23","waterworks","andijlaan 21",0616505007);
     }
 }
