@@ -19,10 +19,10 @@ public class KeanuTesting {
 
     public static void main(String[] args) {
 
-        Onderdeel2 onderdeel = new Onderdeel2("Roer","Carbon fibre ",1,799.99,799.99);
+        Onderdeel2 roer = new Onderdeel2("Roer","Carbon fibre ",1,799.99,799.99);
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Aantal", "Stukprijs", " Totaal");
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "-------------", "---------------", "------", "-----------", "-----------");
-        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", onderdeel.naam, onderdeel.omschrijving, onderdeel.aantal, onderdeel.stukprijs, onderdeel.totaal);
+        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", roer.naam, roer.omschrijving, roer.aantal, roer.stukprijs, roer.totaal);
 
     }
 }
