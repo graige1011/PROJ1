@@ -62,9 +62,9 @@ class afwerking extends Onderdeel {
 
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
-    Onderdeel onderdeel1 = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
-    Onderdeel onderdeel2 = new Onderdeel("part2", "description 2", 1, 30.00,1.00);
+    Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
+    Onderdeel mast = new Onderdeel("part2", "description 2", 1, 30.00,1.00);
 
-        OnderdeelList.add(onderdeel1);
-        OnderdeelList.add(onderdeel2);
+        OnderdeelList.add(roer);
+        OnderdeelList.add(mast);
 
