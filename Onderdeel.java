@@ -7,7 +7,7 @@ public abstract class Onderdeel {
     protected double StukPrijs;
     protected double MilieuKorting;
 
-
+    ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
     public Onderdeel(String ProductNaam, String  ProductOmschrijving, int ProductAantal, double StukPrijs, double MilieuKorting){
         this.ProductNaam = ProductNaam;
@@ -64,5 +64,9 @@ class afwerking extends Onderdeel {
 
 
 
+    Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
+    Onderdeel mast = new Onderdeel("part2", "description 2", 1, 30.00,1.00);
 
+        OnderdeelList.add(roer);
+        OnderdeelList.add(mast);
 
