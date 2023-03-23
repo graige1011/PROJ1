@@ -29,6 +29,7 @@ class UserStory1 {
     ArrayList<Optie> opties;
 
     public UserStory1() {
+
         opties = new ArrayList<Optie>();
 
         // Voeg opties toe aan de lijst
