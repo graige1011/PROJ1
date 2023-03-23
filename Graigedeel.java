@@ -1,3 +1,5 @@
+import java.util.List;
+
 class Offerte{
     int offertenr;
     Onderdeel3 onderdeel;
@@ -6,6 +8,8 @@ class Offerte{
     String adres;
     int telefoonnr;
     double totaal;
+
+
 
     public Offerte(int offertenr, String datum, String bedrijfsnaam, String adres, int telefoonnr,double totaal) {
         this.offertenr = offertenr;
