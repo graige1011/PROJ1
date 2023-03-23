@@ -14,12 +14,14 @@ public abstract class Onderdeel {
 
     protected double MilieuKorting;
 
+
     Categorie categorie;
 
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
 
     public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, double MilieuKorting){
+
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
         this.ProductAantal = ProductAantal;
