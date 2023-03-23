@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+
 class UserStory1 {
 
     // Definieer de categorieën
@@ -61,3 +63,32 @@ class UserStory1 {
     }
 }
 
+class Optie {
+
+    private String naam;
+    private double essentielePrijs;
+    private double extraPrijs;
+
+    public Optie(String naam, double essentielePrijs, double extraPrijs) {
+        this.naam = naam;
+        this.essentielePrijs = essentielePrijs;
+        this.extraPrijs = extraPrijs;
+    }
+
+    public double getPrijs(KlantType klantType) {
+        if (klantType == KlantType.STANDAARD) {
+            return essentielePrijs;
+        } else if (klantType == KlantType.PREMIUM) {
+            return extraPrijs;
+        } else {
+            throw new IllegalArgumentException("Ongeldig klanttype: " + klantType);
+        }
+    }
+
+    // getters en setters voor naam, essentielePrijs en extraPrijs
+}
+
+enum KlantType {
+    STANDAARD,
+    PREMIUM
+}
