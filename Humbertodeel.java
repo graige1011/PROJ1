@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+class UserStory1 {
+
+    // Definieer de categorieën
+    enum Categorie {
+        ESSENTIEEL,
+        EXTRA
+    }
+
+
+    // Definieer de opties
+    class Optie {
+        String naam;
+        String omschrijving;
+        Categorie categorie;
+
+        public Optie(String naam, String omschrijving, Categorie categorie) {
+            this.naam = naam;
+            this.omschrijving = omschrijving;
+            this.categorie = categorie;
+        }
+    }
+
+    // Lijst met alle beschikbare opties
+    ArrayList<Optie> opties;
+
+    public UserStory1() {
+        opties = new ArrayList<Optie>();
+
+        // Voeg opties toe aan de lijst
+        opties.add(new Optie("Motor", "Krachtbron van het schip", Categorie.ESSENTIEEL));
+        opties.add(new Optie("Roer", "Besturing van het schip", Categorie.ESSENTIEEL));
+        opties.add(new Optie("Anker", "Voor anker gaan bij stilstand", Categorie.EXTRA));
+        opties.add(new Optie("Radio", "Communicatie op het schip", Categorie.EXTRA));
+
+        // Sorteer de lijst op categorie en dan op naam
+        Collections.sort(opties, new Comparator<Optie>() {
+            public int compare(Optie o1, Optie o2) {
+                if (o1.categorie != o2.categorie) {
+                    return o1.categorie.compareTo(o2.categorie);
+                } else {
+                    return o1.naam.compareTo(o2.naam);
+                }
+            }
+        });
+    }
+
+    // Methode om de lijst van opties te tonen
+    public void toonOpties() {
+        for (Optie optie : opties) {
+            System.out.println(optie.categorie + ": " + optie.naam + " - " + optie.omschrijving);
+        }
+    }
+
+    // Test de code
+    public static void main(String[] args) {
+        UserStory1 opties = new UserStory1();
+        opties.toonOpties();
+    }
+}
+
