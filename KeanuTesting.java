@@ -5,7 +5,7 @@
     double stukprijs;
     double totaal;
 
-     public Onderdeel2(String naam, String omschrijving, int aantal, double stukprijs, double totaal){
+     public Onderdeel2(String naam, String  omschrijving, int aantal, double stukprijs, double totaal){
          this.naam = naam;
          this.omschrijving = omschrijving;
          this.aantal = aantal;

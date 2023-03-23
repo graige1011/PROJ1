@@ -12,6 +12,7 @@ class UserStory1 {
     }
 
 
+
     // Definieer de opties
     class Optie {
         String naam;
@@ -29,6 +30,7 @@ class UserStory1 {
     ArrayList<Optie> opties;
 
     public UserStory1() {
+
         opties = new ArrayList<Optie>();
 
         // Voeg opties toe aan de lijst
@@ -63,32 +65,60 @@ class UserStory1 {
     }
 }
 
-class Optie {
 
-    private String naam;
-    private double essentielePrijs;
-    private double extraPrijs;
+class Offerte4 {
 
-    public Optie(String naam, double essentielePrijs, double extraPrijs) {
-        this.naam = naam;
-        this.essentielePrijs = essentielePrijs;
-        this.extraPrijs = extraPrijs;
+    private KlantType klantType;
+    private List<Optie> gekozenOpties;
+
+    public Offerte4(KlantType klantType, List<Optie> gekozenOpties) {
+        this.klantType = klantType;
+        this.gekozenOpties = gekozenOpties;
     }
 
-    public double getPrijs(KlantType klantType) {
-        if (klantType == KlantType.STANDAARD) {
-            return essentielePrijs;
-        } else if (klantType == KlantType.PREMIUM) {
-            return extraPrijs;
-        } else {
-            throw new IllegalArgumentException("Ongeldig klanttype: " + klantType);
+    public double berekenTotaalPrijs() {
+        double totaal = 0.0;
+        for (Optie optie : gekozenOpties) {
+            totaal += optie.getPrijs(klantType);
         }
+        return totaal;
     }
 
-    // getters en setters voor naam, essentielePrijs en extraPrijs
-}
+    public String getTotaalPrijsAlsString() {
+        double totaalPrijs = berekenTotaalPrijs();
+        return String.format("Totaalprijs: €%.2f", totaalPrijs);
+    }
 
-enum KlantType {
-    STANDAARD,
-    PREMIUM
+    // getters en setters voor klantType en gekozenOpties
+
+
+    class Optie {
+
+        private String naam;
+        private double essentielePrijs;
+        private double extraPrijs;
+
+        public Optie(String naam, double essentielePrijs, double extraPrijs) {
+            this.naam = naam;
+            this.essentielePrijs = essentielePrijs;
+            this.extraPrijs = extraPrijs;
+        }
+
+        public double getPrijs(KlantType klantType) {
+            if (klantType == KlantType.STANDAARD) {
+                return essentielePrijs;
+            } else if (klantType == KlantType.PREMIUM) {
+                return extraPrijs;
+            } else {
+                throw new IllegalArgumentException("Ongeldig klanttype: " + klantType);
+            }
+        }
+
+        // getters en setters voor naam, essentielePrijs en extraPrijs
+    }
+
+    enum KlantType {
+        STANDAARD,
+        PREMIUM
+    }
 }
