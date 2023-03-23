@@ -6,9 +6,9 @@ class Offerte{
     String adres;
     int telefoonnr;
 
-    public Offerte(int offertenr, Onderdeel3 onderdeel, String datum, String bedrijfsnaam, String adres, int telefoonnr) {
+    public Offerte(int offertenr, String datum, String bedrijfsnaam, String adres, int telefoonnr) {
         this.offertenr = offertenr;
-        this.onderdeel = onderdeel;
+
         this.datum = datum;
         this.bedrijfsnaam = bedrijfsnaam;
         this.adres = adres;
@@ -27,7 +27,7 @@ class Offerte{
         return onderdeel;
     }
 
-    public void setOnderdeel(Onderdeel onderdeel) {
+    public void setOnderdeel(Onderdeel3 onderdeel) {
         this.onderdeel = onderdeel;
     }
 
@@ -78,11 +78,11 @@ class Onderdeel3 {
         this.totaal = totaal;
     }
 }
-public class graigedeel {
+public class Graigedeel {
     public static void main(String[] args) {
-        Onderdeel3 roer = new Onderdeel2("Roer","Carbon fibre ",1,799.99,799.99);
-        Offerte offerte1 =  new Offerte(001,Onderdeel3,"22-03-23","waterworks","andijlaan 21",0616505007);
-        
+        Onderdeel3 roer = new Onderdeel3("Roer","Carbon fibre ",1,799.99,799.99);
+        Offerte offerte1 =  new Offerte(1,"22-03-23","waterworks","andijlaan 21",616505007);
+
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Aantal", "Stukprijs", " Totaal");
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "-------------", "---------------", "------", "-----------", "-----------");
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", roer.naam, roer.omschrijving, roer.aantal, roer.stukprijs, roer.totaal);
