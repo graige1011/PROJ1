@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-
 class Offerte{
     int offertenr;
-    Onderdeel onderdeel;
+    Onderdeel3 onderdeel;
     String datum;
     String bedrijfsnaam;
     String adres;
@@ -30,7 +28,7 @@ class Offerte{
         return onderdeel;
     }
 
-    public void setOnderdeel(Onderdeel onderdeel) {
+    public void setOnderdeel(Onderdeel3 onderdeel) {
         this.onderdeel = onderdeel;
     }
 
@@ -82,13 +80,6 @@ class Onderdeel3 {
     }
 }
 public class Graigedeel {
-
-    ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
-    Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
-    Onderdeel mast = new Onderdeel("part2", "description 2", 1, 30.00,1.00);
-
-    OnderdeelList.add(roer);
-    OnderdeelList.add(mast);
     public static void main(String[] args) {
         Onderdeel3 roer = new Onderdeel3("Roer","Carbon fibre ",1,799.99,1249.99);
         Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
@@ -101,7 +92,6 @@ public class Graigedeel {
         System.out.println("Adres: "+ offerte1.adres);
         System.out.println("");
         System.out.println("");
-
 
 
 
