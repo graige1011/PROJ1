@@ -117,6 +117,7 @@ class Offerte4 {
         // getters en setters voor naam, essentielePrijs en extraPrijs
     }
 
+
     enum KlantType {
         STANDAARD,
         PREMIUM
