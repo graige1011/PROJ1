@@ -12,6 +12,7 @@ class UserStory1 {
     }
 
 
+
     // Definieer de opties
     class Optie {
         String naam;
