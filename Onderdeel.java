@@ -1,11 +1,11 @@
-//Abstracte class om onderdelen vanuit te creeren//
 import java.util.ArrayList;
 
+/*Abstracte class om onderdelen vanuit te creeren
 enum Categorie {
     ESSENTIEEL,
     EXTRA
-}
-public abstract class Onderdeel {
+}*/
+class Onderdeel {
 
     String ProductNaam;
     String ProductOmschrijving;
@@ -15,19 +15,19 @@ public abstract class Onderdeel {
     protected double MilieuKorting;
 
 
-    Categorie categorie;
+/*    Categorie categorie;
 
-    ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
+    ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();*/
 
 
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, double MilieuKorting){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving,int ProductAantal, double StukPrijs, double MilieuKorting){
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
         this.ProductAantal = ProductAantal;
         this.StukPrijs = StukPrijs;
         this.MilieuKorting = MilieuKorting;
-        this.categorie = categorie;
+//      this.categorie = categorie;
     }
 
     public String getNaam() {
@@ -51,7 +51,7 @@ public abstract class Onderdeel {
     }
 
     public void setAantal(int aantal) {
-        this.ProductAantal = ProductAantal;
+        this.ProductAantal = aantal;
     }
 
 
@@ -59,27 +59,24 @@ public abstract class Onderdeel {
         return  (StukPrijs * MilieuKorting);
     }
 //Abstracte method voor het toevoegen van een milieukorting op een onderdeel//
-    abstract void setMilieuKorting(double milieuKorting);
+    public void setMilieuKorting(double milieuKorting){
+    }
 }
 
-class afwerking extends Onderdeel {
+
+/*class afwerking extends Onderdeel {
 
     @Override
     public void setMilieuKorting(double milieuKorting){
         super.MilieuKorting = milieuKorting;
     }
-    //Constructor voor afwerking onderdeel//
+Constructor voor afwerking onderdeel//
     public afwerking(double MilieuKorting) {
         super.MilieuKorting = MilieuKorting;
-    }
-
-}
+    }}*/
 
 
 
-    Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
-    Onderdeel mast = new Onderdeel("part2", "description 2", 1, 30.00,1.00);
 
-        OnderdeelList.add(roer);
-        OnderdeelList.add(mast);
+
 
