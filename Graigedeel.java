@@ -83,15 +83,11 @@ public class Graigedeel {
         Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
         Onderdeel mast = new Onderdeel("mast", "description 2", 1, 30.00,1.00);
         Onderdeel engine = new Onderdeel("engine", "description 4", 1, 20.00,1.00);
-        Onderdeel miter = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
-        Onderdeel draaibank = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
         Onderdeel carborator = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
         offerte1.OnderdeelList.add(roer);
         offerte1.OnderdeelList.add(mast);
         offerte1.OnderdeelList.add(engine);
         offerte1.OnderdeelList.add(carborator);
-        offerte1.OnderdeelList.add(draaibank);
-        offerte1.OnderdeelList.add(miter);
 
 
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Aantal", "Stukprijs", " Totaal");
