@@ -84,6 +84,8 @@ public class Graigedeel {
         Onderdeel mast = new Onderdeel("mast", "description 2", 1, 30.00,1.00);
         Onderdeel engine = new Onderdeel("engine", "description 4", 1, 20.00,1.00);
         Onderdeel carborator = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
+        Onderdeel carborator = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
+        Onderdeel carborator = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
         offerte1.OnderdeelList.add(roer);
         offerte1.OnderdeelList.add(mast);
         offerte1.OnderdeelList.add(engine);
