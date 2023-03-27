@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+enum Categorie {
+    ESSENTIEEL,
+    EXTRA
+}
+
 class Offerte{
     int offertenr;
     ArrayList<Onderdeel> OnderdeelList;
@@ -9,6 +14,8 @@ class Offerte{
     int telefoonnr;
     double totaal;
 
+
+
     public Offerte(int offertenr, String datum, String bedrijfsnaam, String adres, int telefoonnr,double totaal) {
         this.offertenr = offertenr;
         this.datum = datum;
@@ -17,6 +24,7 @@ class Offerte{
         this.telefoonnr = telefoonnr;
         this.totaal = totaal;
         this.OnderdeelList = new ArrayList<Onderdeel>();
+
     }
 
     public int getOffertenr() {
@@ -80,20 +88,20 @@ public class Graigedeel {
         System.out.println("Adres: "+ offerte1.adres);
         System.out.println("");
         System.out.println("");
-        Onderdeel roer = new Onderdeel("Roer", "description 1", 1, 50.00,1.00);
-        Onderdeel mast = new Onderdeel("mast", "description 2", 1, 30.00,1.00);
-        Onderdeel engine = new Onderdeel("engine", "description 4", 1, 20.00,1.00);
-        Onderdeel carborator = new Onderdeel("carborator", "description 4", 1, 40.00,1.00);
+        Onderdeel roer = new Onderdeel("Roer", "description 1",Categorie.ESSENTIEEL ,1, 50.00,1.00);
+        Onderdeel mast = new Onderdeel("mast", "description 2",Categorie.ESSENTIEEL ,1, 30.00,1.00);
+        Onderdeel engine = new Onderdeel("engine", "description 4",Categorie.ESSENTIEEL , 1, 20.00,1.00);
+        Onderdeel carborator = new Onderdeel("carborator", "description 4",Categorie.ESSENTIEEL ,  1, 40.00,1.00);
         offerte1.OnderdeelList.add(roer);
         offerte1.OnderdeelList.add(mast);
         offerte1.OnderdeelList.add(engine);
         offerte1.OnderdeelList.add(carborator);
 
 
-        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Aantal", "Stukprijs", " Totaal");
+        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving","Categorie", "Aantal", "Stukprijs", " Totaal");
         System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "-------------", "---------------", "------", "-----------", "-----------");
         for (Onderdeel p : offerte1.OnderdeelList){
-            System.out.printf("%-15s %-20s %-10s %-15s %-15s\n",p.ProductNaam,p.ProductOmschrijving,p.ProductAantal,p.StukPrijs,p.MilieuKorting );
+            System.out.printf("%-15s %-20s %-10s %-15s %-15s\n",p.ProductNaam,p.ProductOmschrijving,p.categorie, p.ProductAantal,p.StukPrijs,p.MilieuKorting );
         }
 
     }

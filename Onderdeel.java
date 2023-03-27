@@ -14,20 +14,22 @@ class Onderdeel {
 
     protected double MilieuKorting;
 
+    Categorie categorie;
+
 
 /*    Categorie categorie;
 
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();*/
 
 
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving,int ProductAantal, double StukPrijs, double MilieuKorting){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, double MilieuKorting){
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
         this.ProductAantal = ProductAantal;
         this.StukPrijs = StukPrijs;
         this.MilieuKorting = MilieuKorting;
-//      this.categorie = categorie;
+        this.categorie = categorie;
     }
 
     public String getNaam() {

@@ -6,10 +6,7 @@ import java.util.List;
 class UserStory1 {
 
     // Definieer de categorieën
-    enum Categorie {
-        ESSENTIEEL,
-        EXTRA
-    }
+
 
 
 
