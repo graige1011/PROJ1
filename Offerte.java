@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 class Offerte{
     int offertenr;
-    ArrayList<Onderdeel> OnderdeelList;
+    ArrayList<Onderdeel> Onderdelen;
     String datum;
     String bedrijfsnaam;
     String adres;
@@ -16,7 +16,7 @@ class Offerte{
         this.adres = adres;
         this.telefoonnr = telefoonnr;
         this.totaal = totaal;
-        this.OnderdeelList = new ArrayList<Onderdeel>();
+        this.Onderdelen = new ArrayList<Onderdeel>();
     }
 
     public int getOffertenr() {
