@@ -1,16 +1,12 @@
 import java.util.ArrayList;
 
-/*Abstracte class om onderdelen vanuit te creeren
-enum Categorie {
-    ESSENTIEEL,
-    EXTRA
-}*/
 
+// enum om te kijken of een onderdeel essentieel of extra is
 enum Categorie {
     ESSENTIEEL,
     EXTRA
 }
-class Onderdeel {
+class Onderdeel { // onderdeel class
 
     String ProductNaam;
     String ProductOmschrijving;
