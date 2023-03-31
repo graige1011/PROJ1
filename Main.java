@@ -6,11 +6,6 @@ public class Main{
 
         List<Onderdeel> onderdelen = OnderdeelFactory.createOnderdelen();
 
-//        offerte1.Onderdelen.add(roer);
-//        offerte1.Onderdelen.add(mast);
-//        offerte1.Onderdelen.add(engine);
-//        offerte1.Onderdelen.add(carborator);
-
         offerte1.offerteInfo();
         offerte1.Onderdelen.addAll(onderdelen);
 
