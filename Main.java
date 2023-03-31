@@ -1,17 +1,18 @@
-public class    Main{
+import java.util.List;
+
+public class Main{
     public static void main(String[] args) {
         Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
-        Onderdeel roer = new Onderdeel("Roer", "description 1",Categorie.ESSENTIEEL, 1, 50.00,1.00);
-        Onderdeel mast = new Onderdeel("mast", "description 2", Categorie.ESSENTIEEL,1, 30.00,1.00);
-        Onderdeel engine = new Onderdeel("engine", "description 4",Categorie.ESSENTIEEL ,1, 20.00,1.00);
-        Onderdeel carborator = new Onderdeel("carborator", "description 4",Categorie.ESSENTIEEL ,1, 40.00,1.00);
-        offerte1.Onderdelen.add(roer);
-        offerte1.Onderdelen.add(mast);
-        offerte1.Onderdelen.add(engine);
-        offerte1.Onderdelen.add(carborator);
+
+        List<Onderdeel> onderdelen = OnderdeelFactory.createOnderdelen();
+
+//        offerte1.Onderdelen.add(roer);
+//        offerte1.Onderdelen.add(mast);
+//        offerte1.Onderdelen.add(engine);
+//        offerte1.Onderdelen.add(carborator);
 
         offerte1.offerteInfo();
-
+        offerte1.Onderdelen.addAll(onderdelen);
 
 
 
