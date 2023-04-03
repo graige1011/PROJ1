@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class OnderdeelFactory {
+public class OnderdeelLijst {
     public static List<Onderdeel> createOnderdelen() {
         return List.of(
                 new Onderdeel("Roer", "description 1", Categorie.ESSENTIEEL, 1, 50.00, 1.00),
