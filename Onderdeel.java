@@ -20,6 +20,14 @@ class Onderdeel { // onderdeel class
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
 
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
     public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, double MilieuKorting){
 
         this.ProductNaam = ProductNaam;

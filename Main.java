@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 import java.util.Scanner;
@@ -21,8 +22,18 @@ public class Main{
         int option = scanner.nextInt();
         switch (option){
             case 1:
-                System.out.println("Oke laten wij beginnen met het bouwen van een schip\n Maak keuze");
-                break;
+                System.out.println("Oke laten wij beginnen met het bouwen van een schip\n Welke romp zou u willen? ");
+
+                // create an instance of the List<Onderdeel> using the createOnderdelen() method
+                List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving","Categorie", "Aantal", "Stukprijs", "Totaal");
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "-----------");
+                Onderdeel romp = OnderdeelLijst.createOnderdelen().get(0);
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs()) ;
+
+
+            break;
             case 2:
                 break;
             case 3:
