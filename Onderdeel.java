@@ -8,10 +8,11 @@ enum Categorie {
 }
 class Onderdeel { // onderdeel class
 
-    String ProductNaam;
-    String ProductOmschrijving;
-    int ProductAantal;
+    private String ProductNaam;
+    private String ProductOmschrijving;
+    private int ProductAantal;
     protected double StukPrijs;
+    private String SoortOnderdeel;
 
     protected double MilieuKorting;
 
@@ -28,14 +29,17 @@ class Onderdeel { // onderdeel class
         this.categorie = categorie;
     }
 
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, double MilieuKorting){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, double MilieuKortingl){
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
         this.ProductAantal = ProductAantal;
         this.StukPrijs = StukPrijs;
+        this.SoortOnderdeel = SoortOnderdeel;
         this.MilieuKorting = MilieuKorting;
         this.categorie = categorie;
+
+        
     }
 
     public String getNaam() {
