@@ -1,9 +1,8 @@
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import java.util.Scanner;
-public class Main {
+public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] asciiArt = {
@@ -23,7 +22,7 @@ public class Main {
         System.out.println(" Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n 2. Ik wil kijken welke onderdelen beschikbaar zijn\n 3. Sluiten\nVoer een optie 1-3 in ");
 
         int option = scanner.nextInt();
-        switch (option) {
+        switch (option){
             case 1:
                 System.out.println("Oke laten wij beginnen met het bouwen van een schip\n Welke romp zou u willen? ");
 
@@ -33,57 +32,18 @@ public class Main {
                 System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Totaal");
                 System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "-----------");
                 Onderdeel romp = OnderdeelLijst.createOnderdelen().get(0);
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs());
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs()) ;
 
 
-                break;
+            break;
             case 2:
                 break;
             case 3:
                 break;
             default:
                 System.out.println("Ongeldige optie");
-
-                // Maak een lijst van gebruikers met verschillende gebruikersnamen, wachtwoorden en rollen
-                Gebruiker admin = new Gebruiker("admin", "admin123", "admin");
-                Gebruiker klant = new Gebruiker("klant", "klant123", "klant");
-                List<Gebruiker> gebruikersLijst = Arrays.asList(admin, klant);
-
-                // Vraag de gebruiker om hun gebruikersnaam en wachtwoord in te voeren
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Gebruikersnaam:");
-                String gebruikersnaam = scanner.nextLine();
-                System.out.println("Wachtwoord:");
-                String wachtwoord = scanner.nextLine();
-
-                // Controleer of de ingevoerde gebruikersnaam en wachtwoord overeenkomen met de gebruikers in de lijst
-                String rol = "";
-                for (Gebruiker gebruiker : gebruikersLijst) {
-                    if (gebruiker.getGebruikersnaam().equals(gebruikersnaam) && gebruiker.getWachtwoord().equals(wachtwoord)) {
-                        rol = gebruiker.getRol();
-                        break;
-                    }
-                }
-
-                // Gebruik de rol om te bepalen welke functionaliteit beschikbaar moet worden gesteld aan de gebruiker
-                switch (rol) {
-                    case "admin":
-                        // toon het beheerdersmenu
-                        System.out.println("Welkom admin!");
-                        // voeg hier uw code toe voor de beheerdersfunctionaliteit
-                        break;
-                    case "klant":
-                        // toon het klantenmenu
-                        System.out.println("Welkom klant!");
-                        // voeg hier uw code toe voor de klantenfunctionaliteit
-                        break;
-                    default:
-                        System.out.println("Ongeldige gebruikersnaam of wachtwoord");
-
-
-                }
-
         }
+
     }
 }
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
