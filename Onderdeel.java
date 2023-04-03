@@ -42,6 +42,7 @@ class Onderdeel { // onderdeel class
         
     }
 
+
     public String getNaam() {
         return ProductNaam;
     }
