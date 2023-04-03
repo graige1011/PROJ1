@@ -14,10 +14,12 @@ public class Main{
                 "              |_|                        "
         };
 
+
         for (String line : asciiArt) {
             System.out.println(line);
         }
-        System.out.println("\nWelcome bij Shipflex, Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n 2. Ik wil kijken welke onderdelen beschikbaar zijn\n 3. Sluiten\nVoer een optie 1-3 in ");
+        System.out.println("\nWelcome bij Shipflex, ben jij 1.Klant - 2.Admin");
+        System.out.println(" Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n 2. Ik wil kijken welke onderdelen beschikbaar zijn\n 3. Sluiten\nVoer een optie 1-3 in ");
 
         int option = scanner.nextInt();
         switch (option){
