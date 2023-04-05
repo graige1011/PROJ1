@@ -63,20 +63,19 @@ public class Main {
         switch (option) {
             case 1:
                 System.out.println("Oke laten wij beginnen met het bouwen van een schip\n Welke romp zou u willen? ");
-
-                // create an instance of the List<Onderdeel> using the createOnderdelen() method
-                List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
-
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Totaal", "Milieukorting");
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "-----------", "-----------", "-----------");
-                Onderdeel romp = OnderdeelLijst.createOnderdelen().get(0);
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs(), "", romp.getMilieuKorting() + "%");
+                OnderdeelLijst.print_Alle_Rompen();
 
 
-
-
-
-
+                break;
+            case 2:
+                OnderdeelLijst.print_Alle_Onderdelen();
+                break;
+            case 3:
+                System.out.println("");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Ongeldige optie");
 
         }
     }

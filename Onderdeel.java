@@ -21,13 +21,7 @@ class Onderdeel { // onderdeel class
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
 
-    public Categorie getCategorie() {
-        return categorie;
-    }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
-    }
 
     public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, double MilieuKorting){
 
@@ -66,8 +60,20 @@ class Onderdeel { // onderdeel class
     public void setAantal(int aantal) {
         this.ProductAantal = aantal;
     }
+    public Categorie getCategorie() {
+        return categorie;
+    }
 
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+    public String getSoortOnderdeel() {
+        return SoortOnderdeel;
+    }
 
+    public void setSoortOnderdeel(String soortOnderdeel) {
+        SoortOnderdeel = soortOnderdeel;
+    }
     public double getPrijs() {
         return  (StukPrijs * MilieuKorting);
     }
