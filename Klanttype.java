@@ -1,3 +1,4 @@
+
 public class Klanttype {
     private String naam;
     private double korting;

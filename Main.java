@@ -15,42 +15,42 @@ public class Main {
                 "              |_|                        "
         };
 
-        // Maak een lijst van gebruikers met verschillende gebruikersnamen, wachtwoorden en rollen
-        Gebruiker admin = new Gebruiker("admin", "admin123", "admin");
-        Gebruiker klant = new Gebruiker("klant", "klant123", "klant");
-        List<Gebruiker> gebruikersLijst = Arrays.asList(admin, klant);
-
-        // Vraag de gebruiker om hun gebruikersnaam en wachtwoord in te voeren
-        scanner = new Scanner(System.in);
-        System.out.println("Gebruikersnaam:");
-        String gebruikersnaam = scanner.nextLine();
-        System.out.println("Wachtwoord:");
-        String wachtwoord = scanner.nextLine();
-
-        // Controleer of de ingevoerde gebruikersnaam en wachtwoord overeenkomen met de gebruikers in de lijst
-        String rol = "";
-        for (Gebruiker gebruiker : gebruikersLijst) {
-            if (gebruiker.getGebruikersnaam().equals(gebruikersnaam) && gebruiker.getWachtwoord().equals(wachtwoord)) {
-                rol = gebruiker.getRol();
-                break;
-            }
-        }
-
-        // Gebruik de rol om te bepalen welke functionaliteit beschikbaar moet worden gesteld aan de gebruiker
-        switch (rol) {
-            case "admin":
-                // toon het beheerdersmenu
-                System.out.println("Welkom admin!");
-                // voeg hier uw code toe voor de beheerdersfunctionaliteit
-                break;
-            case "klant":
-                // toon het klantenmenu
-                System.out.println("Welkom klant!");
-                // voeg hier uw code toe voor de klantenfunctionaliteit
-                break;
-            default:
-                System.out.println("Ongeldige gebruikersnaam of wachtwoord");
-        }
+//        // Maak een lijst van gebruikers met verschillende gebruikersnamen, wachtwoorden en rollen
+//        Gebruiker admin = new Gebruiker("admin", "admin123", "admin");
+//        Gebruiker klant = new Gebruiker("klant", "klant123", "klant");
+//        List<Gebruiker> gebruikersLijst = Arrays.asList(admin, klant);
+//
+//        // Vraag de gebruiker om hun gebruikersnaam en wachtwoord in te voeren
+//        scanner = new Scanner(System.in);
+//        System.out.println("Gebruikersnaam:");
+//        String gebruikersnaam = scanner.nextLine();
+//        System.out.println("Wachtwoord:");
+//        String wachtwoord = scanner.nextLine();
+//
+//        // Controleer of de ingevoerde gebruikersnaam en wachtwoord overeenkomen met de gebruikers in de lijst
+//        String rol = "";
+//        for (Gebruiker gebruiker : gebruikersLijst) {
+//            if (gebruiker.getGebruikersnaam().equals(gebruikersnaam) && gebruiker.getWachtwoord().equals(wachtwoord)) {
+//                rol = gebruiker.getRol();
+//                break;
+//            }
+//        }
+//
+//        // Gebruik de rol om te bepalen welke functionaliteit beschikbaar moet worden gesteld aan de gebruiker
+//        switch (rol) {
+//            case "admin":
+//                // toon het beheerdersmenu
+//                System.out.println("Welkom admin!");
+//                // voeg hier uw code toe voor de beheerdersfunctionaliteit
+//                break;
+//            case "klant":
+//                // toon het klantenmenu
+//                System.out.println("Welkom klant!");
+//                // voeg hier uw code toe voor de klantenfunctionaliteit
+//                break;
+//            default:
+//                System.out.println("Ongeldige gebruikersnaam of wachtwoord");
+//        }
 
 
         for (String line : asciiArt) {
