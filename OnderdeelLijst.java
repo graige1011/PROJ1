@@ -100,11 +100,46 @@ public class OnderdeelLijst extends Onderdeel {
         System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
-            if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
+            if (onderdeel.getSoortOnderdeel().equals("ELEKSYS")) {
                 System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
                 counter++;
             }
         }
     }
+    public static void print_Alle_Navigatie(){ //functie voor het printen van alle rompen
+        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
+
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("NAVI")) {
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
+            }
+        }
+    }
+    public static void print_Alle_Tanks(){ //functie voor het printen van alle rompen
+        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
+
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("TANK")) {
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
+            }
+        }
+    }
+
+    public void addOnderdeel(String name, String description, Categorie categorie, int amount, double price, String type, double milleukorting) { //functie voor het toevoegen van onderdelen als het nodig is
+        Onderdeel onderdeel = new Onderdeel(name, description, categorie, amount, price, type, milleukorting);
+        OnderdeelLijst.add(onderdeel);
+    }
+//addOnderdeel werkt nog niet mischien meneer vragen wat ik kan doen om het te fixen?
+
 
 }
