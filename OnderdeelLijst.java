@@ -24,6 +24,8 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("Basis navigatiesysteem","eenvoudige functionaliteiten.",Categorie.ESSENTIEEL,1,500.00,"NAVI",0.00),
                 new Onderdeel("Gemiddeld navigatiesysteem","geavanceerde functies, kaartplotter.",Categorie.ESSENTIEEL,1,2000.00,"NAVI",0.00),
                 new Onderdeel("Geavanceerd navigatiesysteem","geïntegreerde kaartplotter, radar, automatische piloot.",Categorie.ESSENTIEEL,1,8000.00,"NAVI",0.80),
+                new Onderdeel("Sturdy aluminium dek","op maat gemaakt, duur.",Categorie.ESSENTIEEL,1,500.00,"DEK",0.80),
+                new Onderdeel("Sturdy houten dek","op maat gemaakt, duur.",Categorie.ESSENTIEEL,1,500.00,"DEK",0.80),
                 new Onderdeel("Plastic jerrycan","lichtgewicht, goedkoop.",Categorie.EXTRA,1,50.00,"TANK",0.00),
                 new Onderdeel("Stalen brandstoftank","stevig, duurzamer.",Categorie.EXTRA,1,100.00,"TANK",0.00),
                 new Onderdeel("Aangepaste aluminium tank","op maat gemaakt, duur.",Categorie.EXTRA,1,500.00,"TANK",0.80),

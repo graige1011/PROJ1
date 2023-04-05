@@ -84,10 +84,6 @@ public class Main {
                     System.out.println("Succesfully added");
                     break;
 
-                case  5:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
-                    System.out.println("Succesfully added");
-                    break;
             }
 
 
@@ -97,29 +93,15 @@ public class Main {
             int optionMotor = scanner.nextInt();
             switch(optionMotor){
                 case  1:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
                     System.out.println("Succesfully added");
                     break;
 
                 case  2:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(1));
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(5));
                     System.out.println("Succesfully added");
                     break;
 
-                case  3:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
-                    System.out.println("Succesfully added");
-                    break;
-
-                case  4:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(3));
-                    System.out.println("Succesfully added");
-                    break;
-
-                case  5:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
-                    System.out.println("Succesfully added");
-                    break;
             }
 
             System.out.println("\nWelke roer zou u willen?");
@@ -128,35 +110,58 @@ public class Main {
             int optionRoer = scanner.nextInt();
             switch(optionRoer){
                 case  1:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(6));
                     System.out.println("Succesfully added");
                     break;
 
                 case  2:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(1));
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(7));
                     System.out.println("Succesfully added");
                     break;
 
-                case  3:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
-                    System.out.println("Succesfully added");
-                    break;
 
-                case  4:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(3));
-                    System.out.println("Succesfully added");
-                    break;
-
-                case  5:
-                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
-                    System.out.println("Succesfully added");
-                    break;
             }
 
             System.out.println("\nWelke dek zou u willen?");
             OnderdeelLijst.print_Alle_Dekken();
+            System.out.println("Welke dek kies je: ");
+            int optionDek = scanner.nextInt();
+            switch(optionDek){
+                case  1:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(14));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  2:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(15));
+                    System.out.println("Succesfully added");
+                    break;
+
+
+            }
+
             System.out.println("\nWelke elektrische systeem zou u willen?");
             OnderdeelLijst.print_Alle_ElektrischeSystemen();
+            System.out.println("Welke motor elektrische systeem kies je: ");
+            int optionElekSysteem= scanner.nextInt();
+            switch(optionElekSysteem){
+                case  1:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(8));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  2:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(9));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  3:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(10));
+                    System.out.println("Succesfully added");
+                    break;
+
+            }
+
             for (Onderdeel onderdeel : offerte.Onderdelen) {
                 System.out.printf(" %-15s %-40s %-15s %-15.2f %-15s %-15s\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
             }
