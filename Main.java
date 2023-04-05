@@ -67,6 +67,7 @@ public class Main {
 
     }
 }
+
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
 //Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
 //        Onderdeel roer = new Onderdeel("Roer", "description 1",Categorie.ESSENTIEEL, 1, 50.00,1.00);
