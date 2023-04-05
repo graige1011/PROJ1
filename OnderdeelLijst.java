@@ -17,7 +17,7 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("900PK Motor","900 pk boot motor: krachtig, duur, en high-end.",Categorie.ESSENTIEEL,1,80000.00,"ENGINE",0),
                 new Onderdeel("300PK Motor","300 pk boot motor: gemiddeld, betaalbaar, en betrouwbaar.",Categorie.ESSENTIEEL,1,40000.00,"ENGINE",0.80),
                 new Onderdeel("Mechanische Roer","Een mechanische roer met kabel",Categorie.ESSENTIEEL,1,2000.00,"ROER",0.80),
-                new Onderdeel("Tandheugel Roer","Tandheugel roer: precies, betrouwbaar, en wendbaar.",Categorie.ESSENTIEEL,1,1000.00,"ROMP",0),
+                new Onderdeel("Tandheugel Roer","Tandheugel roer: precies, betrouwbaar, en wendbaar.",Categorie.ESSENTIEEL,1,1000.00,"ROER",0),
                 new Onderdeel("Basis hoofdstroomsyteem","Basis hoofdstroomsysteem: eenvoudig, minimale functies.",Categorie.ESSENTIEEL,1,700.00,"ELEKSYS",0),
                 new Onderdeel("Gemiddeld hoofdstroomsyteem","Gemiddeld hoofdstroomsysteem: hogere capaciteit, extra functies.",Categorie.ESSENTIEEL,1,1500.00,"ELEKSYS",0),
                 new Onderdeel("Geavanceerd hoofdstroomsyteem","Geavanceerd hoofdstroomsysteem: geïntegreerde monitoring, controle.",Categorie.ESSENTIEEL,1,4000.00,"ELEKSYS",0.80),
