@@ -124,6 +124,35 @@ public class Main {
 
             System.out.println("\nWelke roer zou u willen?");
             OnderdeelLijst.print_Alle_Roeren();
+            System.out.println("Welke roer kies je: ");
+            int optionRoer = scanner.nextInt();
+            switch(optionRoer){
+                case  1:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  2:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(1));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  3:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  4:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(3));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  5:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
+                    System.out.println("Succesfully added");
+                    break;
+            }
+
             System.out.println("\nWelke dek zou u willen?");
             OnderdeelLijst.print_Alle_Dekken();
             System.out.println("\nWelke elektrische systeem zou u willen?");
