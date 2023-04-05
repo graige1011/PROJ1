@@ -29,7 +29,7 @@ class Onderdeel { // onderdeel class
         this.categorie = categorie;
     }
 
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, double MilieuKortingl){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, double MilieuKorting){
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
@@ -73,7 +73,12 @@ class Onderdeel { // onderdeel class
     }
 //Abstracte method voor het toevoegen van een milieukorting op een onderdeel//
     public void setMilieuKorting(double milieuKorting){
+        this.MilieuKorting = milieuKorting;
     }
+    public int getMilieuKorting(){
+        return (1-(int)MilieuKorting)*100;
+    }
+
 }
 
 

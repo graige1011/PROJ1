@@ -67,10 +67,10 @@ public class Main {
                 // create an instance of the List<Onderdeel> using the createOnderdelen() method
                 List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
 
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Totaal");
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "-----------");
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Totaal", "Milieukorting");
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "-----------", "-----------", "-----------");
                 Onderdeel romp = OnderdeelLijst.createOnderdelen().get(0);
-                System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs());
+                System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s %-15s\n", romp.getNaam(), romp.getOmschrijving(), romp.getCategorie(), romp.getAantal(), romp.getPrijs(), "", romp.getMilieuKorting() + "%");
 
 
 
