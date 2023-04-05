@@ -15,7 +15,9 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("FibreglasRomp","description 3",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00),
                 new Onderdeel("StalenRomp","description 4",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00),
                 new Onderdeel("900PK Motor","description 1",Categorie.ESSENTIEEL,1,50.00,"ENGINE",1.00),
-                new Onderdeel("300PK Motor","description 1",Categorie.ESSENTIEEL,1,50.00,"ENGINE",1.00)
+                new Onderdeel("300PK Motor","description 1",Categorie.ESSENTIEEL,1,50.00,"ENGINE",1.00),
+                new Onderdeel("Mechanische Roer","Een mechanische roer met kabel",Categorie.ESSENTIEEL,1,50.00,"ROER",1.00),
+                new Onderdeel("Tandheugel Roer","description 4",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00),
         );
     }
     public static void print_Alle_Onderdelen(){
@@ -53,6 +55,18 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ENGINE")) {
+                System.out.printf("%-15s %-20s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting());
+            }
+        }
+    }
+    public static void print_Alle_Roeren(){
+        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+
+        System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-15s %-20s %-15s %-15s %-15s %-15s\n", "-------------", "---------------", "-----------", "-----------", "---------------", "---------------");
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("ROER")) {
                 System.out.printf("%-15s %-20s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting());
             }
         }
