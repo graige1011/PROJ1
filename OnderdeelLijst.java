@@ -30,7 +30,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         // Print elke onderdeel en hun gegevens
         for (Onderdeel onderdeel : onderdelen) {
-            System.out.printf("%-15s %-20s %-15s %-15d %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getAantal(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting());
+            System.out.printf("%-15s %-20s %-15s %-15d %-15.2f %-15s %-15s\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getAantal(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
         }
     }
     public static void print_Alle_Rompen(){
