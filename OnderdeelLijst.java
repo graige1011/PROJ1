@@ -43,7 +43,7 @@ public class OnderdeelLijst extends Onderdeel {
 
 
 
-                );
+        );
     }
     public static void print_Alle_Onderdelen() { //functie voor het printen van alle onderdelen
         System.out.println("Hier is een lijst van al onze onderdelen die beschikbaar zijn:");
@@ -160,10 +160,10 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
-    public void addOnderdeel(String name, String description, Categorie categorie, int amount, double price, String type, double milleukorting) { //functie voor het toevoegen van onderdelen als het nodig is
-        Onderdeel onderdeel = new Onderdeel(name, description, categorie, amount, price, type, milleukorting);
-        OnderdeelLijst.add(onderdeel);
-    }
+//    public void addOnderdeel(String name, String description, Categorie categorie, int amount, double price, String type, double milleukorting) { //functie voor het toevoegen van onderdelen als het nodig is
+//        Onderdeel onderdeel = new Onderdeel(name, description, categorie, amount, price, type, milleukorting);
+//        OnderdeelLijst.add(onderdeel);
+//    }
 //addOnderdeel werkt nog niet mischien meneer vragen wat ik kan doen om het te fixen?
 
 

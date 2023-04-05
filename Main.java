@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Offerte offerte = new Offerte(001,"12 dec","shipflex","laakweg 5",0616505054, 700);
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
@@ -61,6 +62,78 @@ public class Main {
             System.out.println("Oke laten wij beginnen met het bouwen van een schip\nWelke romp zou u willen? ");
             OnderdeelLijst.print_Alle_Rompen();
             System.out.println("Welke romp kies je: ");
+            int optionRomp = scanner.nextInt();
+            switch(optionRomp){
+                case  1:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
+                    System.out.println("Succesfully added");
+                        break;
+
+                case  2:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(1));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  3:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  4:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(3));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  5:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
+                    System.out.println("Succesfully added");
+                    break;
+            }
+
+
+            System.out.println("\nWelke motor zou u willen?");
+            OnderdeelLijst.print_Alle_Engines();
+            System.out.println("Welke motor kies je: ");
+            int optionMotor = scanner.nextInt();
+            switch(optionMotor){
+                case  1:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  2:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(1));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  3:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  4:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(3));
+                    System.out.println("Succesfully added");
+                    break;
+
+                case  5:
+                    offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(4));
+                    System.out.println("Succesfully added");
+                    break;
+            }
+
+            System.out.println("\nWelke roer zou u willen?");
+            OnderdeelLijst.print_Alle_Roeren();
+            System.out.println("\nWelke dek zou u willen?");
+            OnderdeelLijst.print_Alle_Dekken();
+            System.out.println("\nWelke elektrische systeem zou u willen?");
+            OnderdeelLijst.print_Alle_ElektrischeSystemen();
+            for (Onderdeel onderdeel : offerte.Onderdelen) {
+                System.out.printf(" %-15s %-40s %-15s %-15.2f %-15s %-15s\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+            }
+        }
+        else if(optie == 2 ){
+            OnderdeelLijst.print_Alle_Onderdelen();
         }
 
 
