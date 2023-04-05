@@ -17,7 +17,7 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("900PK Motor","description 1",Categorie.ESSENTIEEL,1,50.00,"ENGINE",1.00),
                 new Onderdeel("300PK Motor","description 1",Categorie.ESSENTIEEL,1,50.00,"ENGINE",1.00),
                 new Onderdeel("Mechanische Roer","Een mechanische roer met kabel",Categorie.ESSENTIEEL,1,50.00,"ROER",1.00),
-                new Onderdeel("Tandheugel Roer","description 4",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00),
+                new Onderdeel("Tandheugel Roer","description 4",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00)
         );
     }
     public static void print_Alle_Onderdelen(){
