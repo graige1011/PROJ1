@@ -20,78 +20,89 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("Tandheugel Roer","description 4",Categorie.ESSENTIEEL,1,50.00,"ROMP",1.00)
         );
     }
-    public static void print_Alle_Onderdelen(){
+    public static void print_Alle_Onderdelen() { //functie voor het printen van alle onderdelen
         System.out.println("Hier is een lijst van al onze onderdelen die beschikbaar zijn:");
-
 
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
 
         // De css voor de tabel van onderdeellijst
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
-        // Print elke onderdeel en hun gegevens
+        // Print elke onderdeel en hun gegevens met counter voor een nummer
+        int counter = 0;
         for (Onderdeel onderdeel : onderdelen) {
-            System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+            System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
+            counter++;
         }
     }
-    public static void print_Alle_Rompen(){
+    public static void print_Alle_Rompen(){ //functie voor het printen van alle rompen
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
-                System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
             }
         }
     }
-    public static void print_Alle_Engines(){
+    public static void print_Alle_Engines(){ //functie voor het printen van alle engines
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ENGINE")) {
-                System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
             }
         }
     }
-    public static void print_Alle_Roeren(){
+    public static void print_Alle_Roeren(){ //functie voor het printen van alle roers
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ROER")) {
-                System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
             }
         }
     }
-    public static void print_Alle_Dekken(){
+    public static void print_Alle_Dekken(){ //functie voor het printen van alle dekken
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("DEK")) {
-                System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                counter++;
             }
         }
     }
-    public static void print_Alle_ElektrischeSystemen(){
+    public static void print_Alle_ElektrischeSystemen() { // functie voor het printen van alle elektrische systemen
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        int counter = 1;
 
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-15s %-40s %-15s %-15s %-15s %-15s\n", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         for (Onderdeel onderdeel : onderdelen) {
-            if (onderdeel.getSoortOnderdeel().equals("ELEKSYS")) {
-                System.out.printf("%-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+            if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
+                counter++;
             }
         }
     }
