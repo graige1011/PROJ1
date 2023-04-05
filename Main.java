@@ -51,33 +51,20 @@ public class Main {
 //            default:
 //                System.out.println("Ongeldige gebruikersnaam of wachtwoord");
 //        }
-
-
         for (String line : asciiArt) {
             System.out.println(line);
         }
-        System.out.println("\nWelcome bij Shipflex, ben jij 1.Klant - 2.Admin");
-        System.out.println(" Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n 2. Ik wil kijken welke onderdelen beschikbaar zijn\n 3. Sluiten\nVoer een optie 1-3 in ");
-
-        int option = scanner.nextInt();
-        switch (option) {
-            case 1:
-                System.out.println("Oke laten wij beginnen met het bouwen van een schip\n Welke romp zou u willen? ");
-                OnderdeelLijst.print_Alle_Rompen();
-
-
-                break;
-            case 2:
-                OnderdeelLijst.print_Alle_Onderdelen();
-                break;
-            case 3:
-                System.out.println("");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Ongeldige optie");
-
+        Menu menu = new Menu();
+        menu.printMenu();
+        int optie = scanner.nextInt();
+        if(optie == 1 ){
+            System.out.println("Oke laten wij beginnen met het bouwen van een schip\nWelke romp zou u willen? ");
+            OnderdeelLijst.print_Alle_Rompen();
+            System.out.println("Welke romp kies je: ");
         }
+
+
+
     }
 }
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
