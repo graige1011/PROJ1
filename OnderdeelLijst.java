@@ -32,7 +32,7 @@ public class OnderdeelLijst extends Onderdeel {
         // Print elke onderdeel en hun gegevens met counter voor een nummer
         int counter = 0;
         for (Onderdeel onderdeel : onderdelen) {
-            System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
+            System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
             counter++;
         }
     }
@@ -45,7 +45,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
-                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
                 counter++;
             }
         }
@@ -59,7 +59,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ENGINE")) {
-                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
                 counter++;
             }
         }
@@ -73,7 +73,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ROER")) {
-                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
                 counter++;
             }
         }
@@ -87,7 +87,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("DEK")) {
-                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
                 counter++;
             }
         }
@@ -101,7 +101,7 @@ public class OnderdeelLijst extends Onderdeel {
 
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
-                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15.2f\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
+                System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1 - onderdeel.getMilieuKorting()) * 100 + "%");
                 counter++;
             }
         }
