@@ -81,8 +81,8 @@ class Onderdeel { // onderdeel class
     public void setMilieuKorting(double milieuKorting){
         this.MilieuKorting = milieuKorting;
     }
-    public int getMilieuKorting(){
-        return (1-(int)MilieuKorting)*100;
+    public double getMilieuKorting(){
+        return MilieuKorting;
     }
 
 }
