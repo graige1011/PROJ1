@@ -14,7 +14,7 @@ class Onderdeel { // onderdeel class
     protected double StukPrijs;
     private String SoortOnderdeel;
 
-    protected double MilieuKorting;
+    protected int MilieuKorting;
 
     Categorie categorie;
 
