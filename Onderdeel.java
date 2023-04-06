@@ -75,7 +75,7 @@ class Onderdeel { // onderdeel class
         SoortOnderdeel = soortOnderdeel;
     }
     public double getPrijs() {
-        return  (StukPrijs * MilieuKorting);
+        return  StukPrijs;
     }
 //Abstracte method voor het toevoegen van een milieukorting op een onderdeel//
     public void setMilieuKorting(int milieuKorting){
