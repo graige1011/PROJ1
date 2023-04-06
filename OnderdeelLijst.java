@@ -204,7 +204,7 @@ public class OnderdeelLijst extends Onderdeel {
             System.out.println("Voer de soort in van de nieuwe onderdeel :");
             String soort = input.nextLine();
             System.out.println("Voer de milieu korting in van de nieuwe onderdeel :");
-            double milleukorting = input.nextDouble();
+            int milleukorting = input.nextInt();
             return new Onderdeel(naam, omschrijving, categorie, aantal, prijs, soort, milleukorting);
         } else {
             return null;
