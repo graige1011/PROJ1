@@ -167,6 +167,68 @@ public class Main {
             if( antwoord == 1){
                 System.out.println("Welke extra opties zou je willen?");
                 OnderdeelLijst.print_Alle_Extraonderdelen();
+                int optieExtra = scanner.nextInt();
+                switch (optieExtra){
+                    case  1:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(16));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  2:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(17));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  3:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(18));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  4:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(19));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  5:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(20));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  6:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(21));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  7:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(22));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  8:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(23));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  9:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(24));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  10:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(25));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  11:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(26));
+                        System.out.println("Succesfully added");
+                        break;
+
+                    case  12:
+                        offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(27));
+                        System.out.println("Succesfully added");
+                        break;
+                }
             }
             else{
 
@@ -203,7 +265,7 @@ public class Main {
 //        offerte1.offerteInfo();
 //
 //
-//
+//          things to rememer: aantal in voeren en alles clearen na elke selectie
 //
 //        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "Onderdeelnaam", "Omschrijving","Categorie", "Aantal", "Stukprijs", " Totaal");
 //        System.out.printf("%-15s %-20s %-10s %-15s %-15s\n", "-------------", "---------------", "------", "-----------", "-----------");

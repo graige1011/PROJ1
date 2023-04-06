@@ -76,7 +76,7 @@ public class OnderdeelLijst extends Onderdeel {
         // Print elke onderdeel en hun gegevens met counter voor een nummer
         int counter = 0;
         for (Onderdeel onderdeel : onderdelen) {
-            if (onderdeel.getCategorie().equals("EXTRA")){
+            if (onderdeel.getCategorie().equals(Categorie.EXTRA)){
                 System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting() + "%");
                 counter++;
             }
@@ -181,23 +181,23 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
-    public static Klanttype createNewOnderdeel() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Wil nieuwe Onderdeel aanmaken? (Ja/Nee)");
-        String antwoord = input.nextLine();
-        if (antwoord.equalsIgnoreCase("Ja")) {
-            System.out.println("Voer de naam in van de nieuwe onderdeel:");
-            String naam = input.nextLine();
-            System.out.println("Voer de omschrijving in van de nieuwe onderdeel (Max 35 characters):");
-            String omschrijving = input.nextLine();
-            System.out.println("Voer de categorie in van de nieuwe onderdeel :");
-            Enum Categorie = input.nextEnum();
-            input.nextLine(); // consume the remaining newline character
-            return new Onderdeel(naam, description, categorie, aantal, prijs, soort, milleukorting);
-        } else {
-            return null;
-        }
-    }
+//    public static Klanttype createNewOnderdeel() {
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Wil nieuwe Onderdeel aanmaken? (Ja/Nee)");
+//        String antwoord = input.nextLine();
+//        if (antwoord.equalsIgnoreCase("Ja")) {
+//            System.out.println("Voer de naam in van de nieuwe onderdeel:");
+//            String naam = input.nextLine();
+//            System.out.println("Voer de omschrijving in van de nieuwe onderdeel (Max 35 characters):");
+//            String omschrijving = input.nextLine();
+//            System.out.println("Voer de categorie in van de nieuwe onderdeel :");
+//            Enum Categorie = input.nextEnum();
+//            input.nextLine(); // consume the remaining newline character
+//            return new Onderdeel(naam, description, categorie, aantal, prijs, soort, milleukorting);
+//        } else {
+//            return null;
+//        }
+//    }
 
 
 
