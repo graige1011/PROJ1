@@ -48,7 +48,7 @@ public class OnderdeelLijst extends Onderdeel {
         );
     }
     public static void print_Alle_Onderdelen() { //functie voor het printen van alle onderdelen
-        System.out.println("Hier is een lijst van al onze onderdelen die beschikbaar zijn:");
+        System.out.println("Hier is een Lijst van al onze onderdelen die beschikbaar zijn:");
 
         List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
 
