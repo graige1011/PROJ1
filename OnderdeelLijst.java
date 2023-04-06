@@ -69,7 +69,7 @@ public class OnderdeelLijst extends Onderdeel {
         // Print elke onderdeel en hun gegevens met counter voor een nummer
         int counter = 1;
         for (Onderdeel onderdeel : onderdelen) {
-            if (onderdeel.getCategorie().equals("EXTRA")){
+            if (onderdeel.getCategorie().equals(Categorie.EXTRA)){
                 System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting() + "%");
                 counter++;
             }
