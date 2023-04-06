@@ -23,7 +23,7 @@ class Onderdeel { // onderdeel class
 
 
 
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, double MilieuKorting){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, int MilieuKorting){
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
@@ -78,10 +78,10 @@ class Onderdeel { // onderdeel class
         return  (StukPrijs * MilieuKorting);
     }
 //Abstracte method voor het toevoegen van een milieukorting op een onderdeel//
-    public void setMilieuKorting(double milieuKorting){
+    public void setMilieuKorting(int milieuKorting){
         this.MilieuKorting = milieuKorting;
     }
-    public double getMilieuKorting(){
+    public int getMilieuKorting(){
         return MilieuKorting;
     }
 
