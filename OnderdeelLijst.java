@@ -39,13 +39,6 @@ public class OnderdeelLijst extends Onderdeel {
                 new Onderdeel("VHF-radio","basiscommunicatie, verplicht.",Categorie.EXTRA,1,250.00,"COMMUNICATIE",20),
                 new Onderdeel("Satelliettelefoon","wereldwijde dekking, duur.",Categorie.EXTRA,1,1000.00,"COMMUNICATIE",0),
                 new Onderdeel("Satellietcommunicatie","geavanceerd, realtime.",Categorie.EXTRA,1,10000.00,"COMMUNICATIE",0)
-
-
-
-
-
-
-
         );
     }
     public static void print_Alle_Onderdelen() { //functie voor het printen van alle onderdelen
@@ -74,7 +67,7 @@ public class OnderdeelLijst extends Onderdeel {
         System.out.printf("%-4s %-15s %-40s %-15s %-15s %-15s %-15s\n", "---", "-------------", "----------------------------------------", "-----------", "-----------", "---------------", "---------------");
 
         // Print elke onderdeel en hun gegevens met counter voor een nummer
-        int counter = 0;
+        int counter = 1;
         for (Onderdeel onderdeel : onderdelen) {
             if (onderdeel.getCategorie().equals("EXTRA")){
                 System.out.printf("%-4d %-15s %-40s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting() + "%");
@@ -181,7 +174,7 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
-    public static Klanttype createNewOnderdeel() {
+    public static Onderdeel createNewOnderdeel() {
         Scanner input = new Scanner(System.in);
         System.out.println("Wil nieuwe Onderdeel aanmaken? (Ja/Nee)");
         String antwoord = input.nextLine();
@@ -190,10 +183,29 @@ public class OnderdeelLijst extends Onderdeel {
             String naam = input.nextLine();
             System.out.println("Voer de omschrijving in van de nieuwe onderdeel (Max 35 characters):");
             String omschrijving = input.nextLine();
-            System.out.println("Voer de categorie in van de nieuwe onderdeel :");
-            Enum Categorie = input.nextEnum();
-            input.nextLine(); // consume the remaining newline character
-            return new Onderdeel(naam, description, categorie, aantal, prijs, soort, milleukorting);
+            System.out.println("Voer de categorie in van de nieuwe onderdeel (ESSENTIEEL of EXTRA):");
+            String categorieString = input.nextLine();
+            Categorie categorie;
+            switch (categorieString.toLowerCase()) {
+                case "ESSENTIEEL":
+                    categorie = Categorie.ESSENTIEEL;
+                    break;
+                case "EXTRA":
+                    categorie = Categorie.EXTRA;
+                    break;
+                default:
+                    System.out.println("Ongeldige categorie");
+                    return null;
+            }
+            System.out.println("Voer de hoeveelheid in van de nieuwe onderdeel :");
+            int aantal = input.nextInt();
+            System.out.println("Voer de prijs in van de nieuwe onderdeel :");
+            double prijs = input.nextDouble();
+            System.out.println("Voer de soort in van de nieuwe onderdeel :");
+            String soort = input.nextLine();
+            System.out.println("Voer de milieu korting in van de nieuwe onderdeel :");
+            double milleukorting = input.nextDouble();
+            return new Onderdeel(naam, omschrijving, categorie, aantal, prijs, soort, milleukorting);
         } else {
             return null;
         }
