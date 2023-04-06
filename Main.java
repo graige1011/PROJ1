@@ -165,7 +165,16 @@ public class Main {
             for (Onderdeel onderdeel : offerte.Onderdelen) {
                 System.out.printf(" %-15s %-40s %-15s %-15.2f %-15s %-15s\n", onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), (1-onderdeel.getMilieuKorting())*100 + "%");
             }
+            System.out.println("Wil u nog wat extra opties? 1.Ja 2.Nee");
+            int antwoord;
+            if(antwoord == 1){
+                System.out.println("Welke extra opties zou je willen?");
+
+            }
         }
+
+
+
         else if(optie == 2 ){
             OnderdeelLijst.print_Alle_Onderdelen();
         }
