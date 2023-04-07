@@ -33,7 +33,7 @@ class Onderdeel { // onderdeel class
         this.MilieuKorting = MilieuKorting;
         this.categorie = categorie;
 
-        
+
     }
 
 

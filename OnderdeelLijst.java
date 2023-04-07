@@ -9,6 +9,7 @@ public class OnderdeelLijst extends Onderdeel {
     }
 
 
+
     public static List<Onderdeel> createOnderdelen() {
         return List.of(
                 new Onderdeel("HoutenRomp","klassiek, warm, en milieuvriendelijk.",Categorie.ESSENTIEEL,1,5000.00,"ROMP",20),
@@ -115,7 +116,7 @@ public class OnderdeelLijst extends Onderdeel {
         // Print elke onderdeel en hun gegevens met counter voor een nummer dat de klant kan kiezen
         int counter = 1;
         for (Onderdeel onderdeel : onderdelen) {
-            if (onderdeel.getSoortOnderdeel().equals("DEK")){
+            if (onderdeel.getSoortOnderdeel().equals("ROER")){
                 System.out.printf("%-4d %-35s %-60s %-15s %-15.2f %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting() + "%");
                 counter++;
             }
@@ -185,6 +186,7 @@ public class OnderdeelLijst extends Onderdeel {
             }
         }
     }
+
 
     public static Onderdeel createNewOnderdeel() {
         Scanner input = new Scanner(System.in);
