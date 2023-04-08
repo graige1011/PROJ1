@@ -68,9 +68,9 @@ public class Main {
                 menu.extraOpties();
                 int counter = 1;
                 for (Onderdeel onderdeel : offerte.Onderdelen) {
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------");
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting() + "%");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "aantal");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------","---------------");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal() );
                     counter++;
                 }
                 System.out.println("Wil je terug naar de me menu 1.Ja 2.Nee");

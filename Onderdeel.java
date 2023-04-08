@@ -52,14 +52,14 @@ class Onderdeel { // onderdeel class
     public void setOmschrijving(String omschrijving) {
         this.ProductOmschrijving = ProductOmschrijving;
     }
-
+    public void setAantal(int aantal) {
+        this.ProductAantal = aantal;
+    }
     public int getAantal() {
         return ProductAantal;
     }
 
-    public void setAantal(int aantal) {
-        this.ProductAantal = aantal;
-    }
+
     public Categorie getCategorie() {
         return categorie;
     }

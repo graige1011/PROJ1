@@ -22,6 +22,7 @@ class Menu {
                 System.out.println("Voer in aantal: ");
                 int rompAantal = scanner.nextInt();
                 OnderdeelLijst.createOnderdelen().get(0).setAantal(rompAantal);
+                System.out.println(OnderdeelLijst.createOnderdelen().get(0).getAantal());
 
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(0));
