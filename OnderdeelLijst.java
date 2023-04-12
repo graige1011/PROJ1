@@ -189,6 +189,7 @@ public class OnderdeelLijst extends Onderdeel {
 
 
     public static Onderdeel createNewOnderdeel() {
+
         Scanner input = new Scanner(System.in);
         System.out.println("Wil nieuwe Onderdeel aanmaken? (Ja/Nee)");
         String antwoord = input.nextLine();
@@ -200,7 +201,7 @@ public class OnderdeelLijst extends Onderdeel {
             System.out.println("Voer de categorie in van de nieuwe onderdeel (ESSENTIEEL of EXTRA):");
             String categorieString = input.nextLine();
             Categorie categorie;
-            switch (categorieString.toLowerCase()) {
+            switch (categorieString) {
                 case "ESSENTIEEL":
                     categorie = Categorie.ESSENTIEEL;
                     break;
@@ -215,11 +216,12 @@ public class OnderdeelLijst extends Onderdeel {
             int aantal = input.nextInt();
             System.out.println("Voer de prijs in van de nieuwe onderdeel :");
             double prijs = input.nextDouble();
-            System.out.println("Voer de soort in van de nieuwe onderdeel :");
+            input.nextLine();
+            System.out.println("Voer de soort in van de nieuwe onderdeel (in hoofdletters aub):");
             String soort = input.nextLine();
-            System.out.println("Voer de milieu korting in van de nieuwe onderdeel :");
+            System.out.println("Voer de milieu korting in van de nieuwe onderdeel (in nummers, bijv 20 of 80):");
             int milleukorting = input.nextInt();
-            return new Onderdeel(naam, omschrijving, categorie, aantal, prijs, soort, milleukorting);
+            return  new Onderdeel(naam, omschrijving, categorie, aantal, prijs, soort, milleukorting);
         } else {
             return null;
         }

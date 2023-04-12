@@ -81,9 +81,23 @@ public class Main {
             }
             else if (optie == 2){
                 OnderdeelLijst.print_Alle_Onderdelen();
-                System.out.println("Wil je terug naar de me menu 1.Ja 2.Nee");
+                System.out.println("\n\n\nWil jij iets doen met onderdeel?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
                 userInput2 = scanner.nextInt();
-                if (userInput2 == 2){
+                if(userInput2 == 1){
+
+                }
+                else if(userInput2 == 2){
+                    List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen(); // Krijg de originele lijst met onderdelen
+                    Onderdeel nieuwOnderdeel = OnderdeelLijst.createNewOnderdeel(); // Maak een nieuw onderdeel aan
+
+
+                    onderdelen.add(nieuwOnderdeel); // Voeg het nieuwOnderdeel toe aan de lijst van onderdelen
+                    OnderdeelLijst.print_Alle_Onderdelen();
+
+
+                }
+                else if (userInput2 == 3){
+                    System.out.println("Bedankt voor het gebruiken van mij,fijne dag verder");
                     optie = 5;
                 }
             }
