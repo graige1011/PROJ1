@@ -15,7 +15,7 @@ class Menu {
     public void essentieelOpties(){
         System.out.println("Oke laten wij beginnen met het bouwen van een schip\nWelke romp zou u willen? ");
         OnderdeelLijst.print_Alle_Rompen();
-        System.out.println("Welke romp kies je: ");
+        System.out.println("Welke romp kies je:  ");
         int optionRomp = scanner.nextInt();
         switch (optionRomp) {
             case 1:
