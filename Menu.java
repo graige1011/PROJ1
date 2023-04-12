@@ -21,7 +21,7 @@ class Menu {
             case 1:
                 System.out.println("Voer in aantal: ");
                 int rompAantal = scanner.nextInt();
-
+                OnderdeelLijst.createOnderdelen().get(0).setAantal(rompAantal);
                 System.out.println(OnderdeelLijst.createOnderdelen().get(0).getAantal());
 
 
@@ -42,7 +42,8 @@ class Menu {
             case 3:
                 System.out.println("Voer in aantal: ");
                 int rompAantal3 = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(3).setAantal(rompAantal3);
+                OnderdeelLijst.createOnderdelen().get(2).setAantal(rompAantal3);
+                System.out.println("Uw aantal is nu: "+ OnderdeelLijst.createOnderdelen().get(2).getAantal());
 
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(2));
@@ -106,7 +107,7 @@ class Menu {
             case 2:
                 System.out.println("Voer in aantal: ");
                 int roerAantal2 = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(6).setAantal(roerAantal2);
+                OnderdeelLijst.createOnderdelen().get(7).setAantal(roerAantal2);
 
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(7));
@@ -149,7 +150,7 @@ class Menu {
             case 1:
                 System.out.println("Voer in aantal: ");
                 int elekAantal = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(14).setAantal(elekAantal);
+                OnderdeelLijst.createOnderdelen().get(8).setAantal(elekAantal);
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(8));
                 System.out.println("Succesfully added");
@@ -158,7 +159,7 @@ class Menu {
             case 2:
                 System.out.println("Voer in aantal: ");
                 int elekAantal2 = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(14).setAantal(elekAantal2);
+                OnderdeelLijst.createOnderdelen().get(9).setAantal(elekAantal2);
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(9));
                 System.out.println("Succesfully added");
@@ -167,7 +168,7 @@ class Menu {
             case 3:
                 System.out.println("Voer in aantal: ");
                 int elekAantal3 = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(14).setAantal(elekAantal3);
+                OnderdeelLijst.createOnderdelen().get(10).setAantal(elekAantal3);
 
                 offerte.Onderdelen.add(OnderdeelLijst.createOnderdelen().get(10));
                 System.out.println("Succesfully added");
