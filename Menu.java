@@ -11,6 +11,7 @@ class Menu {
                 "\n 4.Ik wil een nieuwe klanttype aanmaken  " +
                 "\n 5.Sluiten");
 
+
     }
     public void essentieelOpties(){
         System.out.println("Oke laten wij beginnen met het bouwen van een schip\nWelke romp zou u willen? ");
