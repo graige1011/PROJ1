@@ -73,10 +73,11 @@ public class Main {
                     System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal());
                     counter++;
                 }
-                System.out.println("Wil je terug naar de me menu 1.Ja 2.Nee");
+                System.out.println("Wil je terug naar de me menu? \n 1.Ja \n 2.Nee");
                 userInput2 = scanner.nextInt();
-                if (userInput2 == 2) {
-                    optie = 5;
+                if (userInput2 == 1) {
+                    menu.printMenu();
+                    optie = scanner.nextInt();
                 }
             } else if (optie == 2) {
                 OnderdeelLijst.print_Alle_Onderdelen();
@@ -114,34 +115,31 @@ public class Main {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
                     }
-                } else if (optie == 3) {
-
-
-                    Klant nieuweKlant = Klant.createNewKlant();
-                    if (nieuweKlant != null) {
-                        klanten.add(nieuweKlant);
-                        System.out.println("Nieuwe klant succesvol aangemaakt.");
-                    } else {
-                        System.out.println("Aanmaken van nieuwe klant geannuleerd.");
-                    }
-                    System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het hoofdmenu ");
-                    userInput2 = scanner.nextInt();
-                    if (userInput2 == 1) {
-                        System.out.println("Alle klanten:");
-                        for (Klant klant : klanten) {
-                            System.out.println(klant);
-                        }
-                    } else if (userInput2 == 2) {
-                        System.out.println("Terug naar het hoofdmenu.");
-                        optie = 5;
-                    }
-                } else if (optie == 4) {
-
+                } else if(userInput2 == 3){} }else if (optie == 3) {
+                Klant nieuweKlant = Klant.createNewKlant();
+                if (nieuweKlant != null) {
+                    klanten.add(nieuweKlant);
+                    System.out.println("Nieuwe klant succesvol aangemaakt.");
+                } else {
+                    System.out.println("Aanmaken van nieuwe klant geannuleerd.");
                 }
+                System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het hoofdmenu ");
+                userInput2 = scanner.nextInt();
+                if (userInput2 == 1) {
+                    System.out.println("Alle klanten:");
+                    for (Klant klant : klanten) {
+                        System.out.println(klant);
+                    }
+                } else if (userInput2 == 2) {
+                    System.out.println("Terug naar het hoofdmenu.");
+                    optie = 5;
+                }
+
+                } else if (optie == 4) {}
             }
         }
     }
-    }
+
 
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
 //Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
