@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import java.util.Scanner;
 public class Main {
@@ -81,18 +79,29 @@ public class Main {
             }
             else if (optie == 2){
                 OnderdeelLijst.print_Alle_Onderdelen();
-                System.out.println("\n\n\nWil jij iets doen met onderdeel?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
+                System.out.println("\n\n\nWil jij iets doen met onderdeel?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu");
                 userInput2 = scanner.nextInt();
                 if(userInput2 == 1){
 
                 }
-                else if(userInput2 == 2){
-                    List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen(); // Krijg de originele lijst met onderdelen
-                    Onderdeel nieuwOnderdeel = OnderdeelLijst.createNewOnderdeel(); // Maak een nieuw onderdeel aan
+                else if(userInput2 == 2) {
+                    List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+                    List<Onderdeel> onderdelennieuw = new ArrayList<Onderdeel>();
+                    for (Onderdeel onderdeel : onderdelen) {
+                        onderdelennieuw.add(onderdeel); // Add a new onderdeel to the list
+                    }
+
+                    while (userInput2 == 2){
+                        Onderdeel nieuweOnderdeel = OnderdeelLijst.maakNieuweOnderdeel();// Call the maakNieuweOnderdeel() function to create a new onderdeel object
+                        onderdelennieuw.add(nieuweOnderdeel); // Add the new onderdeel to the existing list
+                        OnderdeelLijst.print_Nieuwe_Onderdelen(onderdelennieuw); // Call the printOnderdelen() function to print the updated list
+                        System.out.println("\nWat wil jij nog doen?\n 1. Nog meer nieuwe onderdelen maken\n 2. Nieuwe OnderdelenLijst bekijken\n 3. breng mij terug naar main menu");
 
 
-                    onderdelen.add(nieuwOnderdeel); // Voeg het nieuwOnderdeel toe aan de lijst van onderdelen
-                    OnderdeelLijst.print_Alle_Onderdelen();
+                    }
+
+                }
+
 
 
                 }
@@ -103,7 +112,7 @@ public class Main {
             }
         }
     }
-}
+
 
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
 //Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
