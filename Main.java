@@ -123,7 +123,7 @@ public class Main {
                 } else {
                     System.out.println("Aanmaken van nieuwe klant geannuleerd.");
                 }
-                System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het hoofdmenu ");
+                System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het main menu ");
                 userInput2 = scanner.nextInt();
                 if (userInput2 == 1) {
                     System.out.println("Alle klanten:");
@@ -131,8 +131,9 @@ public class Main {
                         System.out.println(klant);
                     }
                 } else if (userInput2 == 2) {
-                    System.out.println("Terug naar het hoofdmenu.");
-                    optie = 5;
+                    System.out.println("Terug naar het main menu.");
+                    menu.printMenu();
+                    optie = scanner.nextInt();
                 }
 
                 } else if (optie == 4) {}
