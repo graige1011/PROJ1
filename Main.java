@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import java.util.Scanner;
 public class Main {
@@ -9,6 +7,7 @@ public class Main {
         Offerte offerte = new Offerte(001, "12 dec", "shipflex", "laakweg 5", 0616505054, 700);
         Menu menu = new Menu();
         menu.offerte = offerte;
+        ArrayList<Klant> klanten = new ArrayList<>();
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
@@ -100,6 +99,30 @@ public class Main {
                     System.out.println("Bedankt voor het gebruiken van mij,fijne dag verder");
                     optie = 5;
                 }
+            }
+            else if (optie == 3) {
+                Klant nieuweKlant = Klant.createNewKlant();
+                if (nieuweKlant != null) {
+                    klanten.add(nieuweKlant);
+                    System.out.println("Nieuwe klant succesvol aangemaakt.");
+                } else {
+                    System.out.println("Aanmaken van nieuwe klant geannuleerd.");
+                }
+                System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het hoofdmenu ");
+                userInput2 = scanner.nextInt();
+                if (userInput2 == 1) {
+                    System.out.println("Alle klanten:");
+                    for (Klant klant : klanten) {
+                        System.out.println(klant);
+                    }
+                }
+                else if (userInput2 == 2) {
+                    System.out.println("Terug naar het hoofdmenu.");
+                    optie = 5;
+                }
+            }
+            else if (optie == 4) {
+
             }
         }
     }
