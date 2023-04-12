@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 import java.util.Scanner;
 public class Main {
@@ -7,8 +9,6 @@ public class Main {
         Offerte offerte = new Offerte(001, "12 dec", "shipflex", "laakweg 5", 0616505054, 700);
         Menu menu = new Menu();
         menu.offerte = offerte;
-        ArrayList<Klant> klanten = new ArrayList<>();
-
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
@@ -59,7 +59,7 @@ public class Main {
         }
         int userInput2 = 0;
         int optie = 0;
-        while (optie != 5) {
+        while ( optie != 5  ) {
 
             menu.printMenu();
             optie = scanner.nextInt();
@@ -69,22 +69,24 @@ public class Main {
                 int counter = 1;
                 for (Onderdeel onderdeel : offerte.Onderdelen) {
                     System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "aantal");
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------");
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal());
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------","---------------");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal() );
                     counter++;
                 }
                 System.out.println("Wil je terug naar de me menu 1.Ja 2.Nee");
                 userInput2 = scanner.nextInt();
-                if (userInput2 == 2) {
+                if (userInput2 == 2){
                     optie = 5;
                 }
-            } else if (optie == 2) {
+            }
+            else if (optie == 2){
                 OnderdeelLijst.print_Alle_Onderdelen();
                 System.out.println("\n\n\nWil jij iets doen met onderdeel?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
                 userInput2 = scanner.nextInt();
-                if (userInput2 == 1) {
+                if(userInput2 == 1){
 
-                } else if (userInput2 == 2) {
+                }
+                else if(userInput2 == 2){
                     List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen(); // Krijg de originele lijst met onderdelen
                     Onderdeel nieuwOnderdeel = OnderdeelLijst.createNewOnderdeel(); // Maak een nieuw onderdeel aan
 
@@ -93,37 +95,16 @@ public class Main {
                     OnderdeelLijst.print_Alle_Onderdelen();
 
 
-                } else if (userInput2 == 3) {
+                }
+                else if (userInput2 == 3){
                     System.out.println("Bedankt voor het gebruiken van mij,fijne dag verder");
                     optie = 5;
                 }
-            } else if (optie == 3) {
-                Klant nieuweKlant = Klant.createNewKlant();
-                if (nieuweKlant != null) {
-                    klanten.add(nieuweKlant);
-                    System.out.println("Nieuwe klant succesvol aangemaakt.");
-                } else {
-                    System.out.println("Aanmaken van nieuwe klant geannuleerd.");
-                }
-                System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Nee, breng mij terug naar het hoofdmenu ");
-                userInput2 = scanner.nextInt();
-                if (userInput2 == 1) {
-                    System.out.println("Alle klanten:");
-                    for (Klant klant : klanten) {
-                        System.out.println(klant);
-                    }
-                }
-                else if (userInput2 == 2) {
-                    System.out.println("Terug naar het hoofdmenu.");
-                    optie = 5;
-                }
-            }
-            else if (optie == 4) {
-
             }
         }
     }
 }
+
 //hier beneden de offerte lines maar ik ga beginnen met de case break voor main?
 //Offerte offerte1 =  new Offerte(157,"22-03-23","waterworks","andijlaan 21",616505007,859.99);
 //        Onderdeel roer = new Onderdeel("Roer", "description 1",Categorie.ESSENTIEEL, 1, 50.00,1.00);

@@ -35,7 +35,15 @@ class Onderdeel { // onderdeel class
 
 
     }
-
+    public String toString() {
+        return "ProductNaam: " + ProductNaam +
+                "\nProductOmschrijving: " + ProductOmschrijving +
+                "\nProductAantal: " + ProductAantal +
+                "\nStukPrijs: " + StukPrijs +
+                "\nSoortOnderdeel: " + SoortOnderdeel +
+                "\nMilieuKorting: " + MilieuKorting +
+                "\nCategorie: " + categorie;
+    }
 
     public String getNaam() {
         return ProductNaam;
@@ -77,10 +85,9 @@ class Onderdeel { // onderdeel class
     public double getPrijs() {
         return  StukPrijs;
     }
-//Abstracte method voor het toevoegen van een milieukorting op een onderdeel//
-    public void setMilieuKorting(int milieuKorting){
-        this.MilieuKorting = milieuKorting;
-    }
+
+    public void setStukPrijs(double stukPrijs) {StukPrijs = stukPrijs;}
+    public void setMilieuKorting(int milieuKorting){this.MilieuKorting = milieuKorting;}
     public int getMilieuKorting(){
         return MilieuKorting;
     }
