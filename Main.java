@@ -155,8 +155,8 @@ public class Main {
                     System.out.println("Geen nieuw klanttype aangemaakt.");
                 }
             }
-            }
-        }
+            }}
+
     }
 
 
