@@ -291,7 +291,7 @@ class Menu {
                         break;
 
                     case 11:
-                        System.out.println("Voer in aantal: ");
+                        System.out.println("Voer in aantal:  ");
                         int extraAantal11 = scanner.nextInt();
                         Onderdeel extraOnderdeel11 = OnderdeelLijst.createOnderdelen().get(26);
                         extraOnderdeel11.setAantal(extraAantal11);
