@@ -241,6 +241,9 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
+
+
     public static void print_Nieuwe_Onderdelen(List<Onderdeel> onderdelen) {
         System.out.println("Hier is een lijst van al onze onderdelen die beschikbaar zijn:");
         // De css voor de tabel van onderdelen

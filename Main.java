@@ -115,7 +115,8 @@ public class Main {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
                     }
-                } else if(userInput2 == 3){} }else if (optie == 3) {
+                } else if(userInput2 == 3){} }
+            else if (optie == 3) {
                 Klant nieuweKlant = Klant.createNewKlant();
                 if (nieuweKlant != null) {
                     klanten.add(nieuweKlant);
@@ -136,7 +137,24 @@ public class Main {
                     optie = scanner.nextInt();
                 }
 
-                } else if (optie == 4) {}
+                }
+            else if (optie == 4) {
+                Klanttype nieuwKlanttype = Klanttype.maakNieuweKlanttype();
+                if (nieuwKlanttype != null) {
+                    // Do something with the newly created Klanttype object
+                    Klanttype.voegKlanttypeToe(nieuwKlanttype);
+                    System.out.println("Nieuw klanttype aangemaakt: " + nieuwKlanttype.getNaam());
+                    System.out.println("Korting: " + nieuwKlanttype.getKorting());
+                    System.out.println("List of Klanttypes:");
+                    for (Klanttype klanttype : Klanttype.getKlanttypes()) {
+                        System.out.println("Naam: " + klanttype.getNaam());
+                        System.out.println("Korting: " + klanttype.getKorting());
+                        System.out.println("--------------------");
+                    }
+                } else {
+                    System.out.println("Geen nieuw klanttype aangemaakt.");
+                }
+            }
             }
         }
     }
