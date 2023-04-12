@@ -86,7 +86,6 @@ public class Main {
                 if (userInput2 == 2){
                     optie = 5;
                 }
-
             }
         }
     }

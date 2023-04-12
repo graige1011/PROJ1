@@ -21,7 +21,7 @@ class Menu {
             case 1:
                 System.out.println("Voer in aantal: ");
                 int rompAantal = scanner.nextInt();
-                OnderdeelLijst.createOnderdelen().get(0).setAantal(rompAantal);
+
                 System.out.println(OnderdeelLijst.createOnderdelen().get(0).getAantal());
 
 
