@@ -27,11 +27,12 @@ class Onderdeel { // onderdeel class
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
+        this.categorie = categorie;
         this.ProductAantal = ProductAantal;
         this.StukPrijs = StukPrijs;
         this.SoortOnderdeel = SoortOnderdeel;
         this.MilieuKorting = MilieuKorting;
-        this.categorie = categorie;
+
 
 
     }
@@ -50,7 +51,7 @@ class Onderdeel { // onderdeel class
     }
 
     public void setNaam(String naam) {
-        this.ProductNaam = ProductNaam;
+        this.ProductNaam = naam;
     }
 
     public String getOmschrijving() {
