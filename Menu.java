@@ -5,7 +5,7 @@ class Menu {
     Scanner scanner= new Scanner(System.in);
     public void printMenu(){
         System.out.println("\nWelcome bij Shipflex");
-        System.out.println(" Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n " +
+        System.out.println("Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n " +
                 "2. Ik wil kijken welke onderdelen beschikbaar zijn " +
                 "\n 3. Ik wil een nieuwe klant aanmaken" +
                 "\n 4.Ik wil een nieuwe klanttype aanmaken  " +
@@ -14,7 +14,7 @@ class Menu {
 
     }
     public void essentieelOpties(){
-        System.out.println("Oke laten wij beginnen met het bouwen van een schip\nWelke romp zou u willen? ");
+        System.out.println("Oke laten wij beginnen met het bouwen van een schip!\nWelke romp zou u willen? ");
         OnderdeelLijst.print_Alle_Rompen();
         System.out.println("Welke romp kies je:  ");
         int optionRomp = scanner.nextInt();
@@ -180,7 +180,7 @@ class Menu {
         }
     }
     public void extraOpties(){
-        System.out.println("Wil u nog wat extra opties? 1.Ja 2.Nee");
+        System.out.println("Wil u nog wat extra opties?\n 1.Ja \n 2.Nee");
         int antwoord = scanner.nextInt();
         if (antwoord == 1) {
             int userInput = 0;
