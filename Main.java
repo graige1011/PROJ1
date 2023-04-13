@@ -23,6 +23,7 @@ public class Main {
             System.out.println(line);
         }
         int userInput2 = 0;
+        int userInput7 = 0;
         int optie = 0;
         while (optie != 5) {
 
@@ -71,11 +72,13 @@ public class Main {
                 }
                 System.out.printf("Totaal bedrag voor alle onderdelen met klanttype "+naamklant+":%.2f€",(kortingklant*totaalPrijs));
                 System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Print alweer het offerte met overzichtelijke totaalbedragen\n");
-                if (userInput2 == 1) {
+                userInput7 = scanner.nextInt();
+                if (userInput7 == 1) {
                     menu.printMenu();
                     optie = scanner.nextInt();
                 } else {
                     counter = 1;
+                    offerte.offerteInfo();
                     System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
                     System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
                     for (Onderdeel onderdeel : offerte.Onderdelen) {
