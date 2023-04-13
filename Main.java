@@ -64,7 +64,7 @@ public class Main {
                     naamklant = "Overheid";
                 } else if(userInput2 == 2){
                     kortingklant =Klanttype.getKortingForKlanttype("Bedrijf");
-                    naamklant = "Bedrijf";
+                    naamklant = "Bedrijv";
                 } else if (userInput2 == 3) {
                     kortingklant =Klanttype.getKortingForKlanttype("Particulier");
                     naamklant = "Particulier";
