@@ -76,7 +76,13 @@ public class Klant {
 //        Klanttype klanttype = klanttypes.get(klanttypeIndex);
         return new Klant(voorNaam, achterNaam, email);
     }
-
+    @Override
+    public String toString() {
+        return "Voornaam: " + voorNaam +
+                ", Achternaam: " + achterNaam +
+                ", Email: " + email +
+                ", Klanttype: " + (klanttype != null ? klanttype.getNaam() : "Geen klanttype");
+    }
 
 }
 

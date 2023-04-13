@@ -66,20 +66,29 @@ public class Main {
                 menu.essentieelOpties();
                 menu.extraOpties();
                 int counter = 1;
-                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "aantal");
-                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------");
-                for (Onderdeel onderdeel : offerte.Onderdelen) {
+                double totaalPrijs = 0.0;
+                double millieuKorting = 100;
+                offerte.offerteInfo();
+                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
+                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
 
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal());
+                for (Onderdeel onderdeel : offerte.Onderdelen) {
+                    double totaalOnderdeel = onderdeel.getAantal() * onderdeel.getPrijs() ;
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
                     counter++;
+                    millieuKorting = (millieuKorting -20)/100;
+                    totaalPrijs = totaalPrijs * millieuKorting;
+                    totaalPrijs+= totaalOnderdeel;
                 }
-                System.out.println("Wil je terug naar de main menu? \n 1.Ja \n 2.Nee");
+                System.out.printf("\n\nTotaal bedrag voor alle onderdelen: %.3f", totaalPrijs);
+                System.out.println("\n\nWil je terug naar de main menu? \n 1.Ja \n 2.Nee");
                 userInput2 = scanner.nextInt();
                 if (userInput2 == 1) {
                     menu.printMenu();
                     optie = scanner.nextInt();
                 } else { optie = 5;}
-            } else if (optie == 2) {
+            }
+            else if (optie == 2) {
                 OnderdeelLijst.print_Alle_Onderdelen();
                 System.out.println("\n\n\nWil jij iets doen met onderdeel?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
                 userInput2 = scanner.nextInt();
