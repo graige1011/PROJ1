@@ -194,8 +194,6 @@ public class OnderdeelLijst extends Onderdeel {
             }
         }
     }
-
-
     public static Onderdeel maakNieuweOnderdeel() {
         Scanner input = new Scanner(System.in);
         System.out.println("Voer de naam in van de nieuwe onderdeel:");
@@ -227,8 +225,8 @@ public class OnderdeelLijst extends Onderdeel {
         System.out.println("Voer de milieu korting in van de nieuwe onderdeel (in nummers, bijv 20 of 80):");
         int milieuKorting = input.nextInt();
         input.nextLine(); // consume newline character
-        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
-        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "------", "-----------", "---------------", "---------------");
         System.out.printf("%-4d %-35s %-60s %-15s %-15.2f %-15s %-15s\n", 1, naam, omschrijving, categorieString, prijs, soort, milieuKorting + "%");
 
         System.out.println("Hier is uw nieuwe onderdeel, is alles correct? (ja/nee)");
@@ -240,10 +238,70 @@ public class OnderdeelLijst extends Onderdeel {
             return null;
         }
     }
+    public static void bewerkOnderdeel(List<Onderdeel> onderdelen) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Voer het indexnummer in van het onderdeel dat u wilt bewerken:");
+        int index = input.nextInt();
+        input.nextLine(); // consume newline character
+        if (index < 1 || index > onderdelen.size()) {
+            System.out.println("Ongeldige index");
+            return;
+        }
+        Onderdeel onderdeel = onderdelen.get(index - 1);
+        System.out.println("Voer de nieuwe naam in van het onderdeel (huidige waarde: " + onderdeel.getNaam() + "):");
+        String nieuweNaam = input.nextLine();
+        onderdeel.setNaam(nieuweNaam);
+        System.out.println("Voer de nieuwe omschrijving in van het onderdeel (huidige waarde: " + onderdeel.getOmschrijving() + "):");
+        String nieuweOmschrijving = input.nextLine();
+        onderdeel.setOmschrijving(nieuweOmschrijving);
+        System.out.println("Voer de nieuwe categorie in van het onderdeel (huidige waarde: " + onderdeel.getCategorie() + "):");
+        String nieuweCategorieString = input.nextLine();
+        Categorie nieuweCategorie;
+        switch (nieuweCategorieString) {
+            case "ESSENTIEEL":
+                nieuweCategorie = Categorie.ESSENTIEEL;
+                break;
+            case "EXTRA":
+                nieuweCategorie = Categorie.EXTRA;
+                break;
+            default:
+                System.out.println("Ongeldige categorie");
+                return;
+        }
+        onderdeel.setCategorie(nieuweCategorie);
+        System.out.println("Voer de nieuwe hoeveelheid in van het onderdeel (huidige waarde: " + onderdeel.getAantal() + "):");
+        int nieuweAantal = input.nextInt();
+        onderdeel.setAantal(nieuweAantal);
+        input.nextLine(); // consume newline character
+        System.out.println("Voer de nieuwe prijs in van het onderdeel (huidige waarde: " + onderdeel.getPrijs() + "):");
+        double nieuwePrijs = input.nextDouble();
+        onderdeel.setStukPrijs(nieuwePrijs);
+        input.nextLine(); // consume newline character
+        System.out.println("Voer de nieuwe soort in van het onderdeel (huidige waarde: " + onderdeel.getSoortOnderdeel() + "):");
+        String nieuweSoort = input.nextLine();
+        onderdeel.setSoortOnderdeel(nieuweSoort);
+        System.out.println("Voer de nieuwe milieu korting in van het onderdeel (huidige waarde: " + onderdeel.getMilieuKorting() + "):");
+        int nieuweMilieuKorting = input.nextInt();
+        onderdeel.setMilieuKorting(nieuweMilieuKorting);
+        input.nextLine(); // consume newline character
 
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Aantal", "Stukprijs", "Soort onderdeel", "Milieu korting");
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "------", "-----------", "---------------", "---------------");
+        System.out.printf("%-4d %-35s %-60s %-15s %-15d %-15.2f %-15s %-15s\n", 1, nieuweNaam, nieuweOmschrijving, nieuweCategorie, nieuweAantal, nieuwePrijs, nieuweSoort, nieuweMilieuKorting + "%");
 
+        System.out.println("Hier is uw nieuwe onderdeel, is alles correct? (ja/nee)");
+        String antwoord = input.nextLine();
+        if (antwoord.equalsIgnoreCase("ja")) {
+            // The user confirmed that the updated part is correct
+            // You can perform any additional actions or validations here
+        } else if (antwoord.equalsIgnoreCase("nee")) {
+            // The user indicated that the updated part is not correct
+            // You can handle this case as per your application's requirements
+        } else {
+            // Invalid input, handle accordingly
+        }
 
-
+    }
     public static void print_Nieuwe_Onderdelen(List<Onderdeel> onderdelen) {
         System.out.println("Hier is een lijst van al onze onderdelen die beschikbaar zijn:");
         // De css voor de tabel van onderdelen

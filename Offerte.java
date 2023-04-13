@@ -68,13 +68,8 @@ class Offerte{
     }
     public void offerteInfo(){
         System.out.println("Offerte Nr: "+ offertenr);
-        System.out.println("");
         System.out.println("Datum: "+ datum);
-        System.out.println("");
         System.out.println("Bedrijfsnaam: "+ bedrijfsnaam);
-        System.out.println("");
         System.out.println("Adres: "+ adres);
-        System.out.println("");
-        System.out.println("");
     }
 }

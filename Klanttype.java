@@ -94,6 +94,16 @@ public class Klanttype {
             System.out.println("Naam: " + klanttype.getNaam() + ", Korting: " + klanttype.getKorting());
         }
     }
+    public static double getKortingForKlanttype(String klanttypeName) {
+        for (Klanttype klanttype : klanttypes) {
+            if (klanttype.getNaam().equalsIgnoreCase(klanttypeName)) {
+                return klanttype.getKorting();
+            }
+        }
+        throw new IllegalArgumentException("Klanttype not found.");
+    }
+
+
 
 
 }
