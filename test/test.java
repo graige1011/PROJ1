@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.junit.jupiter.api.*;
@@ -11,32 +12,55 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class test {
 
-    private InputStream inputStream;
+    private Klant klant;
 
     @BeforeEach
     public void setUp() {
-        // Set up input stream for testing user input
-        String input = "Ja\nTest Naam\nTest Omschrijving\nESSENTIEEL\n5\n10.99\nTest Soort\n50\n";
-        inputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inputStream);
+        // Set up a new Klant object before each test
+        klant = new Klant("John", "Doe", "johndoe@example.com");
     }
 
     @Test
-    public void testNieuwOnderdeel() {
-        Onderdeel nieuwOnderdeel = new Onderdeel("Test Naam","Test Omschrijving",Categorie.ESSENTIEEL,5,10.0,"Test Soort",50);
-
-        // Assertions
-        assertNotNull(nieuwOnderdeel);
-        assertEquals("Test Naam", nieuwOnderdeel.getNaam());
-        assertEquals("Test Omschrijving", nieuwOnderdeel.getOmschrijving());
-        assertEquals(Categorie.ESSENTIEEL, nieuwOnderdeel.getCategorie());
-        assertEquals(5, nieuwOnderdeel.getAantal());
-        assertEquals(10.0, nieuwOnderdeel.getPrijs(), 0.001); // Double comparison with delta
-        assertEquals("Test Soort", nieuwOnderdeel.getSoortOnderdeel());
-        assertEquals(50, nieuwOnderdeel.getMilieuKorting());
+    public void testVoorNaam() {
+        // Test setting and getting voorNaam
+        klant.setVoorNaam("Johnny");
+        assertEquals("Johnny", klant.getVoorNaam(), "VoorNaam should be 'Johnny'");
     }
 
+    @Test
+    public void testAchterNaam() {
+        // Test setting and getting achterNaam
+        klant.setAchterNaam("Smith");
+        assertEquals("Smith", klant.getAchterNaam(), "AchterNaam should be 'Smith'");
+    }
 
+    @Test
+    public void testEmail() {
+        // Test setting and getting email
+        klant.setEmail("johnsmith@example.com");
+        assertEquals("johnsmith@example.com", klant.getEmail(), "Email should be 'johnsmith@example.com'");
+    }
+    @Test
+    public void testVoegKlanttypeToe() {
+        Klanttype klanttype = new Klanttype("Test", 0.5);
+        Klanttype.voegKlanttypeToe(klanttype);
+
+        ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
+        assertTrue(klanttypes.contains(klanttype));
+    }
+    @Test
+    public void testGetKlanttypeNaam() {
+        Klanttype klanttype = new Klanttype("Student", 0.75);
+        String verwachteNaam = "Student";
+        String daadwerkelijkeNaam = klanttype.getNaam();
+
+        assertEquals(verwachteNaam, daadwerkelijkeNaam);
+    }
 }
+

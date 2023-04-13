@@ -88,5 +88,12 @@ public class Klanttype {
         klanttypes.add(Bedrijf);
         klanttypes.add(Particulier);
     }
+    public static void toonKlanttypes() {
+        System.out.println("Beschikbare klanttypes:");
+        for (Klanttype klanttype : klanttypes) {
+            System.out.println("Naam: " + klanttype.getNaam() + ", Korting: " + klanttype.getKorting());
+        }
+    }
+
 
 }

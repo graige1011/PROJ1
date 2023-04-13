@@ -139,21 +139,30 @@ public class Main {
 
                 }
             else if (optie == 4) {
-                Klanttype nieuwKlanttype = Klanttype.maakNieuweKlanttype();
-                if (nieuwKlanttype != null) {
-                    // Do something with the newly created Klanttype object
-                    Klanttype.voegKlanttypeToe(nieuwKlanttype);
-                    System.out.println("Nieuw klanttype aangemaakt: " + nieuwKlanttype.getNaam());
-                    System.out.println("Korting: " + nieuwKlanttype.getKorting());
-                    System.out.println("List of Klanttypes:");
-                    for (Klanttype klanttype : Klanttype.getKlanttypes()) {
-                        System.out.println("Naam: " + klanttype.getNaam());
-                        System.out.println("Korting: " + klanttype.getKorting());
-                        System.out.println("--------------------");
+
+                int userInput5 = 0;
+                while(userInput5 != 2){
+                    Klanttype.toonKlanttypes();
+                    Klanttype nieuwKlanttype = Klanttype.maakNieuweKlanttype();
+                    if (nieuwKlanttype != null) {
+                        // Do something with the newly created Klanttype object
+                        Klanttype.voegKlanttypeToe(nieuwKlanttype);
+                        System.out.println("Nieuw klanttype aangemaakt: " + nieuwKlanttype.getNaam());
+                        System.out.println("Korting: " + nieuwKlanttype.getKorting());
+                        System.out.println("List of Klanttypes:");
+                        for (Klanttype klanttype : Klanttype.getKlanttypes()) {
+                            System.out.println("Naam: " + klanttype.getNaam());
+                            System.out.println("Korting: " + klanttype.getKorting());
+                            System.out.println("--------------------");
+                        }
+                    } else {
+                        System.out.println("Geen nieuw klanttype aangemaakt.");
                     }
-                } else {
-                    System.out.println("Geen nieuw klanttype aangemaakt.");
+                    System.out.println("\n 1.Nog een klanttype aanmaken? \n 2.Terug naar menu");
+                    userInput5 = scanner.nextInt();
                 }
+
+
             }
             }}
 
