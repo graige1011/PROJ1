@@ -116,7 +116,6 @@ public class Main {
                             OnderdeelLijst.print_Nieuwe_Onderdelen(onderdelennieuw);
                         } else if (userInput3 == 3) {
                             menu.printMenu();
-                            optie = input.nextInt();
                         } else {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
@@ -144,7 +143,6 @@ public class Main {
                             OnderdeelLijst.print_Nieuwe_Onderdelen(onderdelennieuw);
                         } else if (userInput3 == 3) {
                             menu.printMenu();
-                            optie = input.nextInt();
                         } else {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
@@ -152,7 +150,7 @@ public class Main {
                 } else if(userInput2 == 3){
                     System.out.println("");
                     menu.printMenu();
-                    optie = scanner.nextInt();
+
                 } }
             else if (optie == 3) {
                 Klant nieuweKlant = Klant.createNewKlant();
@@ -172,7 +170,6 @@ public class Main {
                 } else if (userInput2 == 2) {
                     System.out.println("Terug naar het main menu.");
                     menu.printMenu();
-                    optie = scanner.nextInt();
                 }
 
                 }
