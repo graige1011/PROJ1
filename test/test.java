@@ -28,38 +28,43 @@ public class test {
 
     @Test
     public void testVoorNaam() {
-        // Test setting and getting voorNaam
+        // Test het instellen en ophalen van voorNaam
         klant.setVoorNaam("Johnny");
-        assertEquals("Johnny", klant.getVoorNaam(), "VoorNaam should be 'Johnny'");
+        assertEquals("Johnny", klant.getVoorNaam(), "VoorNaam zou 'Johnny' moeten zijn");
     }
 
     @Test
     public void testAchterNaam() {
-        // Test setting and getting achterNaam
+        // Test het instellen en ophalen van achterNaam
         klant.setAchterNaam("Smith");
-        assertEquals("Smith", klant.getAchterNaam(), "AchterNaam should be 'Smith'");
+        assertEquals("Smith", klant.getAchterNaam(), "AchterNaam zou 'Smith' moeten zijn");
     }
 
     @Test
     public void testEmail() {
-        // Test setting and getting email
+        // Test het instellen en ophalen van email
         klant.setEmail("johnsmith@example.com");
-        assertEquals("johnsmith@example.com", klant.getEmail(), "Email should be 'johnsmith@example.com'");
+        assertEquals("johnsmith@example.com", klant.getEmail(), "Email zou 'johnsmith@example.com' moeten zijn");
     }
     @Test
     public void testVoegKlanttypeToe() {
+        // Aanmaken van een nieuw Klanttype object met de naam "Test" en een waarde van 0.5
         Klanttype klanttype = new Klanttype("Test", 0.5);
+
+        // Toevoegen van het Klanttype object aan de lijst van Klanttypes
         Klanttype.voegKlanttypeToe(klanttype);
 
+        // Ophalen van de lijst van Klanttypes
         ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
-        assertTrue(klanttypes.contains(klanttype));
-    }
+
+        // Controleren of het Klanttype object is toegevoegd aan de lijst van Klanttypes
+        assertTrue(klanttypes.contains(klanttype));}
     @Test
     public void testGetKlanttypeNaam() {
         Klanttype klanttype = new Klanttype("Student", 0.75);
         String verwachteNaam = "Student";
         String daadwerkelijkeNaam = klanttype.getNaam();
-
+        // Controleren of de verwachte naam overeenkomt met de daadwerkelijke naam is
         assertEquals(verwachteNaam, daadwerkelijkeNaam);
     }
 }

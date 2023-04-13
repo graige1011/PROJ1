@@ -96,16 +96,6 @@ class Onderdeel { // onderdeel class
 }
 
 
-/*class afwerking extends Onderdeel {
-
-    @Override
-    public void setMilieuKorting(double milieuKorting){
-        super.MilieuKorting = milieuKorting;
-    }
-Constructor voor afwerking onderdeel//
-    public afwerking(double MilieuKorting) {
-        super.MilieuKorting = MilieuKorting;
-    }}*/
 
 
 
