@@ -88,8 +88,7 @@ public class Main {
                     System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Sluit het programma");
                     userInput2 = scanner.nextInt();
                     if (userInput2 == 1) {
-                        menu.printMenu();
-                        optie = scanner.nextInt();} else {optie =5;}
+                        System.out.println("");} else {optie =5;}
                 }
             }
             else if (optie == 2) {
