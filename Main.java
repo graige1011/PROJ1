@@ -30,7 +30,7 @@ public class Main {
         int userInput3 = 0;
         int userInput4 = 0;
         int optie = 0;
-        menu.printMenu();
+
         while (optie != 5) {
             menu.printMenu();
             optie = scanner.nextInt();
