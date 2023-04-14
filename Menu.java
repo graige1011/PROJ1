@@ -7,11 +7,16 @@ class Menu {
         System.out.println("\nWelcome bij Shipflex");
         System.out.println("Met wat kan ik u helpen vandaag?\n 1. Ik wil een schip bouwen\n " +
                 "2. Ik wil kijken welke onderdelen beschikbaar zijn " +
-                "\n 3. Ik wil een nieuwe klant aanmaken" +
+                "\n 3. Ik wil een  klantengegevens bekijken " +
                 "\n 4.Ik wil een nieuwe klanttype aanmaken  " +
                 "\n 5.Sluiten");
 
 
+    }
+
+    public void printHeader(){
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
+        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
     }
     public void essentieelOpties(){
         System.out.println("Oke laten wij beginnen met het bouwen van een schip!\nWelke romp zou u willen? ");
