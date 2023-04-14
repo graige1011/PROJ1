@@ -8,6 +8,9 @@ public class Main {
         Menu menu = new Menu();
         menu.offerte = offerte;
         ArrayList<Klant> klanten = new ArrayList<>();
+
+         
+
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",

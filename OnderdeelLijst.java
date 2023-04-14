@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,37 +10,39 @@ public class OnderdeelLijst extends Onderdeel {
     }
 
 
-    public static List<Onderdeel> createOnderdelen() {
-        return List.of(
-                new Onderdeel("HoutenRomp", "klassiek, warm, en milieuvriendelijk.", Categorie.ESSENTIEEL, 1, 5000.00, "ROMP", 20),
-                new Onderdeel("AluminiumRomp", "licht en sterk.", Categorie.ESSENTIEEL, 1, 7000.00, "ROMP", 0),
-                new Onderdeel("VezelglasRomp", "licht, sterk, en flexibel.", Categorie.ESSENTIEEL, 1, 10000.00, "ROMP", 0),
-                new Onderdeel("StalenRomp", "sterk, robuust, en duurzaam.", Categorie.ESSENTIEEL, 1, 29500.00, "ROMP", 0),
-                new Onderdeel("900PK Motor", "krachtig, duur, en high-end.", Categorie.ESSENTIEEL, 1, 80000.00, "ENGINE", 0),
-                new Onderdeel("300PK Motor", "gemiddeld, betaalbaar, en betrouwbaar.", Categorie.ESSENTIEEL, 1, 40000.00, "ENGINE", 0),
-                new Onderdeel("Mechanische Roer", "Een mechanische roer met kabel", Categorie.ESSENTIEEL, 1, 2000.00, "ROER", 0),
-                new Onderdeel("Tandheugel Roer", "precies, betrouwbaar, en wendbaar.", Categorie.ESSENTIEEL, 1, 1000.00, "ROER", 0),
-                new Onderdeel("Basis hoofdstroomsyteem", "eenvoudig, minimale functies.", Categorie.ESSENTIEEL, 1, 700.00, "ELEKSYS", 0),
-                new Onderdeel("Gemiddeld hoofdstroomsyteem", "hogere capaciteit, extra functies.", Categorie.ESSENTIEEL, 1, 1500.00, "ELEKSYS", 0),
-                new Onderdeel("Geavanceerd hoofdstroomsyteem", " geïntegreerde monitoring, controle.", Categorie.ESSENTIEEL, 1, 4000.00, "ELEKSYS", 20),
-                new Onderdeel("Basis navigatiesysteem", "eenvoudige functionaliteiten.", Categorie.ESSENTIEEL, 1, 500.00, "NAVI", 0),
-                new Onderdeel("Gemiddeld navigatiesysteem", "geavanceerde functies, kaartplotter.", Categorie.ESSENTIEEL, 1, 2000.00, "NAVI", 0),
-                new Onderdeel("Geavanceerd navigatiesysteem", "geïntegreerde kaartplotter, radar, automatische piloot.", Categorie.ESSENTIEEL, 1, 8000.00, "NAVI", 20),
-                new Onderdeel("Sturdy aluminium dek", "op maat gemaakt, duur.", Categorie.ESSENTIEEL, 1, 500.00, "DEK", 20),
-                new Onderdeel("Sturdy houten dek", "op maat gemaakt, duur.", Categorie.ESSENTIEEL, 1, 500.00, "DEK", 20),
-                new Onderdeel("Plastic jerrycan", "lichtgewicht, goedkoop.", Categorie.EXTRA, 1, 50.00, "TANK", 0),
-                new Onderdeel("Stalen brandstoftank", "stevig, duurzamer.", Categorie.EXTRA, 1, 100.00, "TANK", 0),
-                new Onderdeel("Aangepaste aluminium tank", "op maat gemaakt, duur.", Categorie.EXTRA, 1, 500.00, "TANK", 20),
-                new Onderdeel("Basis interieur installatie", "eenvoudig en functioneel.", Categorie.EXTRA, 1, 3000.00, "INTERIEUR", 0),
-                new Onderdeel("Gemiddelde interieur installatie", "meer comfort en kwaliteit.", Categorie.EXTRA, 1, 10000.00, "INTERIEUR", 0),
-                new Onderdeel("Geavanceerde interieur installatie", "op maat gemaakt, luxe.", Categorie.EXTRA, 1, 35000.00, "INTERIEUR", 20),
-                new Onderdeel("Fluke anker", "lichtgewicht, budgetvriendelijk.", Categorie.EXTRA, 1, 100.00, "ANKER", 20),
-                new Onderdeel("Plow anker", "allround, effectief.", Categorie.EXTRA, 1, 250.00, "ANKER", 0),
-                new Onderdeel("Anker met hoge grip", "goede houvast, duur.", Categorie.EXTRA, 1, 1000.00, "ANKER", 0),
-                new Onderdeel("VHF-radio", "basiscommunicatie, verplicht.", Categorie.EXTRA, 1, 250.00, "COMMUNICATIE", 20),
-                new Onderdeel("Satelliettelefoon", "wereldwijde dekking, duur.", Categorie.EXTRA, 1, 1000.00, "COMMUNICATIE", 0),
-                new Onderdeel("Satellietcommunicatie", "geavanceerd, realtime.", Categorie.EXTRA, 1, 10000.00, "COMMUNICATIE", 0)
-        );
+    public static ArrayList<Onderdeel> createOnderdelen() {
+        ArrayList<Onderdeel> onderdelen = new ArrayList<>();
+
+        onderdelen.add(new Onderdeel("HoutenRomp", "klassiek, warm, en milieuvriendelijk.", Categorie.ESSENTIEEL, 1, 5000.00, "ROMP", 20));
+        onderdelen.add(new Onderdeel("AluminiumRomp", "licht en sterk.", Categorie.ESSENTIEEL, 1, 7000.00, "ROMP", 0));
+        onderdelen.add(new Onderdeel("VezelglasRomp", "licht, sterk, en flexibel.", Categorie.ESSENTIEEL, 1, 10000.00, "ROMP", 0));
+        onderdelen.add(new Onderdeel("StalenRomp", "sterk, robuust, en duurzaam.", Categorie.ESSENTIEEL, 1, 29500.00, "ROMP", 0));
+        onderdelen.add(new Onderdeel("900PK Motor", "krachtig, duur, en high-end.", Categorie.ESSENTIEEL, 1, 80000.00, "ENGINE", 0));
+        onderdelen.add(new Onderdeel("300PK Motor", "gemiddeld, betaalbaar, en betrouwbaar.", Categorie.ESSENTIEEL, 1, 40000.00, "ENGINE", 0));
+        onderdelen.add(new Onderdeel("Mechanische Roer", "Een mechanische roer met kabel", Categorie.ESSENTIEEL, 1, 2000.00, "ROER", 0));
+        onderdelen.add(new Onderdeel("Tandheugel Roer", "precies, betrouwbaar, en wendbaar.", Categorie.ESSENTIEEL, 1, 1000.00, "ROER", 0));
+        onderdelen.add(new Onderdeel("Basis hoofdstroomsyteem", "eenvoudig, minimale functies.", Categorie.ESSENTIEEL, 1, 700.00, "ELEKSYS", 0));
+        onderdelen.add(new Onderdeel("Gemiddeld hoofdstroomsyteem", "hogere capaciteit, extra functies.", Categorie.ESSENTIEEL, 1, 1500.00, "ELEKSYS", 0));
+        onderdelen.add(new Onderdeel("Geavanceerd hoofdstroomsyteem", " geïntegreerde monitoring, controle.", Categorie.ESSENTIEEL, 1, 4000.00, "ELEKSYS", 20));
+        onderdelen.add(new Onderdeel("Basis navigatiesysteem", "eenvoudige functionaliteiten.", Categorie.ESSENTIEEL, 1, 500.00, "NAVI", 0));
+        onderdelen.add(new Onderdeel("Gemiddeld navigatiesysteem", "geavanceerde functies, kaartplotter.", Categorie.ESSENTIEEL, 1, 2000.00, "NAVI", 0));
+        onderdelen.add(new Onderdeel("Geavanceerd navigatiesysteem", "geïntegreerde kaartplotter, radar, automatische piloot.", Categorie.ESSENTIEEL, 1, 8000.00, "NAVI", 20));
+        onderdelen.add(new Onderdeel("Sturdy aluminium dek", "op maat gemaakt, duur.", Categorie.ESSENTIEEL, 1, 500.00, "DEK", 20));
+        onderdelen.add(new Onderdeel("Sturdy houten dek", "op maat gemaakt, duur.", Categorie.ESSENTIEEL, 1, 500.00, "DEK", 20));
+        onderdelen.add(new Onderdeel("Plastic jerrycan", "lichtgewicht, goedkoop.", Categorie.EXTRA, 1, 50.00, "TANK", 0));
+        onderdelen.add(new Onderdeel("Stalen brandstoftank", "stevig, duurzamer.", Categorie.EXTRA, 1, 100.00, "TANK", 0));
+        onderdelen.add(new Onderdeel("Aangepaste aluminium tank", "op maat gemaakt, duur.", Categorie.EXTRA, 1, 500.00, "TANK", 20));
+        onderdelen.add(new Onderdeel("Basis interieur installatie", "eenvoudig en functioneel.", Categorie.EXTRA, 1, 3000.00, "INTERIEUR", 0));
+        onderdelen.add(new Onderdeel("Gemiddelde interieur installatie", "meer comfort en kwaliteit.", Categorie.EXTRA, 1, 10000.00, "INTERIEUR", 0));
+        onderdelen.add(new Onderdeel("Geavanceerde interieur installatie", "op maat gemaakt, luxe.", Categorie.EXTRA, 1, 35000.00, "INTERIEUR", 20));
+        onderdelen.add(new Onderdeel("Fluke anker", "lichtgewicht, budgetvriendelijk.", Categorie.EXTRA, 1, 100.00, "ANKER", 20));
+        onderdelen.add(new Onderdeel("Plow anker", "allround, effectief.", Categorie.EXTRA, 1, 250.00, "ANKER", 0));
+        onderdelen.add(new Onderdeel("Anker met hoge grip", "goede houvast, duur.", Categorie.EXTRA, 1, 1000.00, "ANKER", 0));
+        onderdelen.add(new Onderdeel("VHF-radio", "basiscommunicatie, verplicht.", Categorie.EXTRA, 1, 250.00, "COMMUNICATIE", 20));
+        onderdelen.add(new Onderdeel("Satelliettelefoon", "wereldwijde dekking, duur.", Categorie.EXTRA, 1, 1000.00, "COMMUNICATIE", 0));
+        onderdelen.add(new Onderdeel("Satellietcommunicatie", "geavanceerd, realtime.", Categorie.EXTRA, 1, 10000.00, "COMMUNICATIE", 0));
+
+        return onderdelen;
     }
 
     public static void print_Alle_Onderdelen() {
