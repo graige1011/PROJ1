@@ -24,19 +24,19 @@ public class Klant {
     }
 
     //Getters & Setters//
-    public String getVoorNaam() {
+    public String getVoornaam() {
         return voorNaam;
     }
 
-    public void setVoorNaam(String voorNaam) {
+    public void setVoornaam(String voorNaam) {
         this.voorNaam = voorNaam;
     }
 
-    public String getAchterNaam() {
+    public String getAchternaam() {
         return achterNaam;
     }
 
-    public void setAchterNaam(String achterNaam) {
+    public void setAchternaam(String achterNaam) {
         this.achterNaam = achterNaam;
     }
 
@@ -63,19 +63,77 @@ public class Klant {
         String achterNaam = input.nextLine();
         System.out.println("Voer het e-mailadres in van de nieuwe klant:");
         String email = input.nextLine();
+        System.out.println("Wat voor klanttype heeft de nieuwe klant?\n 1.Overheid \n 2.Bedrijf \n 3.Particulier ");
+        int userInput = input.nextInt();
+        if (userInput == 1) {
+            return new Klant(voorNaam, achterNaam, email, Klanttype.Overheid);
+        } else if (userInput == 2) {
+            return new Klant(voorNaam, achterNaam, email, Klanttype.Bedrijf);
+        } else if (userInput == 3) {
+            return new Klant(voorNaam, achterNaam, email, Klanttype.Particulier);
+        }
 
-//        // Laat de gebruiker kiezen uit beschikbare klanttypes
-//        System.out.println("Beschikbare klanttypes:");
-//        for (int i = 0; i < klanttypes.size(); i++) {
-//            System.out.println((i+1) + ". " + klanttypes.get(i).getNaam());
-//        }
-//        System.out.print("Kies een klanttype: ");
-//        int klanttypeIndex = input.nextInt() - 1;
-//        input.nextLine(); // consume the remaining newline character
-
-//        Klanttype klanttype = klanttypes.get(klanttypeIndex);
-        return new Klant(voorNaam, achterNaam, email);
+        return null;
     }
+
+    public static void bewerkKlant(ArrayList<Klant> klantenlijst ){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Voer het indexnummer in van het onderdeel dat u wilt bewerken:");
+        int index = input.nextInt();
+        input.nextLine(); // consume newline character
+        Klant klant = klantenlijst.get(index - 1);
+        System.out.println("Voer de nieuwe voornaam in van de klant (huidige waarde: " + klant.getVoornaam() + "):");
+        String nieuweVoornaam = input.nextLine();
+        klant.setVoornaam(nieuweVoornaam);
+        System.out.println("Voer de nieuwe achternaam in van de klant (huidige waarde: " + klant.getAchternaam() + "):");
+        String nieuweAchternaam = input.nextLine();
+        klant.setAchternaam(nieuweAchternaam);
+        System.out.println("Voer de nieuwe email in van de klant (huidige waarde: " + klant.getEmail() + "):");
+        String nieuweEmail = input.nextLine();
+        klant.setEmail(nieuweEmail);
+        System.out.println("Wat voor klanttype heeft de nieuwe klant?\n 1.Overheid \n 2.Bedrijf \n 3.Particulier ");
+        int userInput = input.nextInt();
+        if(userInput == 1) {
+            klant.setKlanttype(Klanttype.Overheid);
+        }
+        else if(userInput ==2){
+            klant.setKlanttype(Klanttype.Bedrijf);
+        }
+        else if (userInput == 3) {
+            klant.setKlanttype(Klanttype.Particulier);
+        }
+    }
+    public static ArrayList<Klant> createKlantenlijst() {
+        ArrayList<Klant> klanten = new ArrayList<>();
+
+        klanten.add(new Klant("John", "Doe", "john.doe@hotmail.com", Klanttype.Particulier));
+        klanten.add(new Klant("Jane", "Smith", "jane.smith@outlook.com", Klanttype.Bedrijf));
+        klanten.add(new Klant("Michael", "Brown", "michael.brown@student.hhs.nl", Klanttype.Particulier));
+        klanten.add(new Klant("Sarah", "Johnson", "sarah.johnson@gmail.com", Klanttype.Bedrijf));
+        klanten.add(new Klant("David", "Taylor", "david.taylor@yahoo.com", Klanttype.Particulier));
+        klanten.add(new Klant("Olivia", "Anderson", "olivia.anderson@icloud.com", Klanttype.Particulier));
+        klanten.add(new Klant("James", "Thomas", "james.thomas@protonmail.com", Klanttype.Bedrijf));
+        klanten.add(new Klant("Emily", "Harris", "emily.harris@live.com", Klanttype.Particulier));
+        klanten.add(new Klant("Daniel", "Walker", "daniel.walker@inbox.com", Klanttype.Bedrijf));
+        klanten.add(new Klant("Sophia", "Clark", "sophia.clark@gmail.com", Klanttype.Particulier));
+
+        return klanten;
+    }
+    public static void printAlleKlanten(ArrayList<Klant> klantenlijst) {
+        System.out.println("Hier is een lijst van al onze klanten:");
+
+        // CSS voor de tabel van klanten
+        System.out.printf("%-4s %-15s %-15s %-35s %-15s\n", "Nr.", "Voornaam", "Achternaam", "Email", "Klanttype");
+        System.out.printf("%-4s %-15s %-15s %-35s %-15s\n", "---", "---------------", "---------------", "-----------------------------------", "---------------");
+
+        // Print elke klant en hun gegevens met een counter voor een nummer, zodat we overzichtelijk de klanten kunnen zien in de lijst
+        int counter = 1;
+        for (Klant klant : klantenlijst) {
+            System.out.printf("%-4d %-15s %-15s %-35s %-15s\n", counter, klant.getVoornaam(), klant.getAchternaam(), klant.getEmail(), klant.getKlanttype().getNaam());
+            counter++;
+        }
+    }
+
     @Override
     public String toString() {
         return "Voornaam: " + voorNaam +
@@ -83,6 +141,5 @@ public class Klant {
                 ", Email: " + email +
                 ", Klanttype: " + (klanttype != null ? klanttype.getNaam() : "Geen klanttype");
     }
-
 }
 

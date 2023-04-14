@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Offerte offerte = new Offerte(1, "12 dec", "shipflex", "laakweg 5", 0616505054, 700);
+        Offerte offerte = new Offerte(1, "12 dec", "shipflex", "laakweg 5", 616505054, 700);
         Menu menu = new Menu();
         menu.offerte = offerte;
-        ArrayList<Klant> klanten = new ArrayList<>();
+        ArrayList<Klant> klanten2 = new ArrayList<>();
 
          
 
@@ -155,34 +155,48 @@ public class Main {
 
                 } }
             else if (optie == 3) {
-                Klant nieuweKlant = Klant.createNewKlant();
-                if (nieuweKlant != null) {
-                    klanten.add(nieuweKlant);
-                    System.out.println("Nieuwe klant succesvol aangemaakt.");
-                } else {
-                    System.out.println("Aanmaken van nieuwe klant geannuleerd.");
-                    System.out.println("\n\nWil je verder nog iets doen met klanten?\n 1. Ja, ik wil alle klanten zien\n 2. Ja, ik wil nog een klant aanmaken\n 3. Nee, breng mij terug naar het main menu ");
-                    userInput2 = scanner.nextInt();
-                    if (userInput2 == 1) {
-                        System.out.println("Alle klanten:");
-                        for (Klant klant : klanten) {
-                            System.out.println(klant);
-                        }
-                    }else if(userInput2 == 2){Klant nieuweKlant3 = Klant.createNewKlant();
-                        if (nieuweKlant3 != null) {
-                            klanten.add(nieuweKlant);
-                            System.out.println("Nieuwe klant succesvol aangemaakt.");
-                        } else {
-                            System.out.println("Aanmaken van nieuwe klant geannuleerd.");
-                        }
-                        System.out.println("");
+                ArrayList<Klant> klantenlijst = Klant.createKlantenlijst();
+                Klant.printAlleKlanten(klantenlijst);
+                boolean exit = false;
+                while (!exit) {
+                    System.out.println("\nWil jij nog wat doen met klantengegevens?\n 1. Ja, ik wil klantgegevens bewerken");
+                    System.out.println(" 2. Ja, ik wil nog een klant aanmaken");
+                    System.out.println(" 3. Ja, ik wil het klantenlijst opnieuw zien");
+                    System.out.println(" 4. Nee, breng mij terug naar het main menu");
+
+                    try {
+                        userInput2 = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline character after reading integer input
+                    } catch (InputMismatchException e) {
+                        System.out.println("Ongeldige invoer. Voer een getal in.");
+                        scanner.nextLine(); // Consume invalid input
+                        continue;
                     }
-                    else if (userInput2 == 3) {
-                        System.out.println("Terug naar het main menu.");
-                        menu.printMenu();
+
+                    switch (userInput2) {
+                        case 1:
+                            Klant.bewerkKlant(klantenlijst);
+                            break;
+                        case 2:
+                            klantenlijst.add(Klant.createNewKlant());
+                            break;
+                        case 3:
+                            Klant.printAlleKlanten(klantenlijst);
+                            break;
+                        case 4:
+                            System.out.println("Terug naar het main menu.");
+                            exit = true;
+                            break;
+                        default:
+                            System.out.println("Ongeldige keuze. Kies een optie uit de menu.");
+                            break;
                     }
                 }
-                }
+                menu.printMenu();
+            }
+
+
+
             else if (optie == 4) {
 
                 int userInput5 = 0;
