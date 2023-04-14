@@ -152,6 +152,7 @@ public class Main {
                     System.out.println("");
                     menu.printMenu();
 
+
                 } }
             else if (optie == 3) {
                 Klant nieuweKlant = Klant.createNewKlant();
