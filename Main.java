@@ -57,19 +57,23 @@ public class Main {
                     totaalPrijs += totaalOnderdeel * millieuKorting;
                 }
                 System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
-                System.out.println("\nwat voor type klant ben jij? \n 1.Overheid \n 2.Bedrijf \n 3.Particulier");
+                Klanttype.toonKlanttypes();
+                System.out.println("\nWat voor type klant ben Jij?");
+                ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
+                for (int i = 0; i < klanttypes.size(); i++) {
+                    System.out.println((i+1) + ". " + klanttypes.get(i).getNaam());
+                }
                 userInput2 = scanner.nextInt();
                 String naamklant = "";
-                double kortingklant = 0.00 ;
-                if(userInput2 == 1){
-                    kortingklant =Klanttype.getKortingForKlanttype("Overheid");
-                    naamklant = "Overheid";
-                } else if(userInput2 == 2){
-                    kortingklant =Klanttype.getKortingForKlanttype("Bedrijf");
-                    naamklant = "Bedrijv";
-                } else if (userInput2 == 3) {
-                    kortingklant =Klanttype.getKortingForKlanttype("Particulier");
-                    naamklant = "Particulier";
+                double kortingklant = 0.00;
+                if (userInput2 >= 1 && userInput2 <= klanttypes.size()) {
+                    Klanttype selectedKlanttype = klanttypes.get(userInput2 - 1);
+                    kortingklant = selectedKlanttype.getKorting();
+                    naamklant = selectedKlanttype.getNaam();
+                    System.out.println("Je hebt gekozen voor: " + naamklant);
+                } else {
+                    System.out.println("Ongeldige invoer. Probeer opnieuw.");
+                    // handle invalid input
                 }
                 System.out.printf("Totaal bedrag voor alle onderdelen met klanttype "+naamklant+":%.2f€",(kortingklant*totaalPrijs));
                 System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Print alweer het offerte met overzichtelijke totaalbedragen\n");
