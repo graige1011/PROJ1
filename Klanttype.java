@@ -27,21 +27,6 @@ public class Klanttype {
         this.korting = korting;
     }
 
-//    public static Klanttype createNewKlanttype() {
-//        Scanner input = new Scanner(System.in);
-//        System.out.println("Wil nieuwe klanttype aanmaken? (Ja/Nee)");
-//        String antwoord = input.nextLine();
-//        if (antwoord.equalsIgnoreCase("Ja")) {
-//            System.out.println("Voer de naam in van de nieuwe klanttype:");
-//            String naam = input.nextLine();
-//            System.out.println("Voer de korting in van de nieuwe klanttype:");
-//            double korting = input.nextDouble();
-//            input.nextLine(); // consume the remaining newline character
-//            return new Klanttype(naam, korting);
-//        } else {
-//            return null;
-//        }
-//    }
 
     public static Klanttype maakNieuweKlanttype() {
         Scanner input = new Scanner(System.in);
@@ -83,7 +68,7 @@ public class Klanttype {
     public static final Klanttype Bedrijf = new Klanttype("Bedrijf", 0.90);
     public static final Klanttype Particulier = new Klanttype("Particulier", 1.00);
     static {
-        // Add predefined Klanttype objects to klanttypes ArrayList
+
         klanttypes.add(Overheid);
         klanttypes.add(Bedrijf);
         klanttypes.add(Particulier);

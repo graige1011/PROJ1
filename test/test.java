@@ -29,15 +29,15 @@ public class test {
     @Test
     public void testVoorNaam() {
         // Test het instellen en ophalen van voorNaam
-        klant.setVoorNaam("Johnny");
-        assertEquals("Johnny", klant.getVoorNaam(), "VoorNaam zou 'Johnny' moeten zijn");
+        klant.setVoornaam("Johnny");
+        assertEquals("Johnny", klant.getVoornaam(), "VoorNaam zou 'Johnny' moeten zijn");
     }
 
     @Test
     public void testAchterNaam() {
         // Test het instellen en ophalen van achterNaam
-        klant.setAchterNaam("Smith");
-        assertEquals("Smith", klant.getAchterNaam(), "AchterNaam zou 'Smith' moeten zijn");
+        klant.setAchternaam("Smith");
+        assertEquals("Smith", klant.getAchternaam(), "AchterNaam zou 'Smith' moeten zijn");
     }
 
     @Test
