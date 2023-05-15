@@ -133,7 +133,6 @@ public class Klant {
             counter++;
         }
     }
-
     @Override
     public String toString() {
         return "Voornaam: " + voorNaam +

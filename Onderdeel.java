@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
-
-// enum om te kijken of een onderdeel essentieel of extra is
-enum Categorie {
+enum Categorie { // enumeration gebruikt om te kijken of een onderdeel essentieel of extra is
     ESSENTIEEL,
     EXTRA
 }
@@ -20,10 +18,7 @@ class Onderdeel { // onderdeel class
 
     ArrayList<Onderdeel> OnderdeelList = new ArrayList<Onderdeel>();
 
-
-
-
-    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, int MilieuKorting){
+    public Onderdeel(String ProductNaam, String  ProductOmschrijving, Categorie categorie, int ProductAantal, double StukPrijs, String SoortOnderdeel, int MilieuKorting){ //constructor voor onderdeel class
 
         this.ProductNaam = ProductNaam;
         this.ProductOmschrijving = ProductOmschrijving;
@@ -36,7 +31,7 @@ class Onderdeel { // onderdeel class
 
 
     }
-    public String toString() {
+    public String toString() { // toString dat in het beginfase werd gebruikt om dingen te testen in onderdeel class
         return "ProductNaam: " + ProductNaam +
                 "\nProductOmschrijving: " + ProductOmschrijving +
                 "\nProductAantal: " + ProductAantal +
@@ -46,7 +41,7 @@ class Onderdeel { // onderdeel class
                 "\nCategorie: " + categorie;
     }
 
-    public String getNaam() {
+    public String getNaam() { //getters and setters
         return ProductNaam;
     }
 

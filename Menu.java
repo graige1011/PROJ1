@@ -13,7 +13,7 @@ class Menu {
 
 
     }
-    public void essentieelOpties(){
+    public void essentieelOpties(){ // deze functie print alle essentiele opties
         System.out.println("Oke laten wij beginnen met het bouwen van een schip!\nWelke romp zou u willen? ");
         OnderdeelLijst.print_Alle_Rompen();
         System.out.println("Welke romp kies je:  ");
@@ -179,7 +179,7 @@ class Menu {
 
         }
     }
-    public void extraOpties(){
+    public void extraOpties(){ //deze functie print alle extra opties
         System.out.println("Wil u nog wat extra opties?\n 1.Ja \n 2.Nee");
         int antwoord = scanner.nextInt();
         if (antwoord == 1) {

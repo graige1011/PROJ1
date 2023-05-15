@@ -7,6 +7,7 @@ public class Main {
         Menu menu = new Menu();
 
         ArrayList<Klant> klanten = new ArrayList<>();
+        ArrayList<Offerte> offertes = new ArrayList<>();
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
@@ -30,6 +31,7 @@ public class Main {
             optie = scanner.nextInt();
             if (optie == 1) {
                 Offerte offerte= Offerte.createNewOfferte();
+                offertes.add(offerte);
                 menu.offerte = offerte;
                 menu.essentieelOpties();
                 menu.extraOpties();
