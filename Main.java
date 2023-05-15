@@ -58,7 +58,7 @@ public class Main {
                 }
                 System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
                 Klanttype.toonKlanttypes();
-                System.out.println("\nWat voor type klant ben Jij?");
+                System.out.println("\nWat voor type klant ben jij?");
                 ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
                 for (int i = 0; i < klanttypes.size(); i++) {
                     System.out.println((i+1) + ". " + klanttypes.get(i).getNaam());
