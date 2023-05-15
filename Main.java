@@ -4,9 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Offerte offerte = new Offerte(001, "12 dec", "shipflex", "laakweg 5", 0616505054, 700);
         Menu menu = new Menu();
-        menu.offerte = offerte;
+
         ArrayList<Klant> klanten = new ArrayList<>();
         String[] asciiArt = {
                 " __  _      _          __  _             ",
@@ -30,7 +29,8 @@ public class Main {
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
-                Offerte.createNewOfferte();
+                Offerte offerte= Offerte.createNewOfferte();
+                menu.offerte = offerte;
                 menu.essentieelOpties();
                 menu.extraOpties();
                 int counter = 1;
@@ -50,10 +50,7 @@ public class Main {
                     }
                     System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
                     counter++;
-
-                    // Update millieuKorting
-
-                    // Update totaalPrijs with totaalOnderdeel and millieuKorting
+                    //totaalprijs berekenen met korting
                     totaalPrijs += totaalOnderdeel * millieuKorting;
                 }
                 System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
@@ -93,11 +90,12 @@ public class Main {
                     }
                     System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
                     System.out.printf("\nTotaal bedrag voor alle onderdelen met klanttype "+naamklant+"en milleukorting:%.2f€",(kortingklant*totaalPrijs));
+                    //hier beneden een vervolg voor als je doorwilt gaan met het programma gebruiken of als je het programma wilt sluiten
                     System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Sluit het programma");
                     userInput2 = scanner.nextInt();
                     if (userInput2 == 1) {
                         menu.printMenu();
-                        optie = scanner.nextInt();} else {optie =5;}
+                        optie = scanner.nextInt();} else {optie =6;}
                 }
             }
             else if (optie == 2){
