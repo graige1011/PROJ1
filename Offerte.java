@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Offerte{
     int offertenr;
@@ -72,4 +73,24 @@ class Offerte{
         System.out.println("Bedrijfsnaam: "+ bedrijfsnaam);
         System.out.println("Adres: "+ adres);
     }
+
+    public static Offerte createNewOfferte() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Voer de offertenr in van de nieuwe offerte:");
+        int offertenr = input.nextInt();
+        input.nextLine();
+        System.out.println("Voer de datum in van de nieuwe offerte:");
+        String datum = input.nextLine();
+        System.out.println("Voer het naam in van de nieuwe offerte:");
+        String naam = input.nextLine();
+        System.out.println("Voer het adres in van de nieuwe offerte:");
+        String adres = input.nextLine();
+        System.out.println("Voer het telefoonnummer in van de nieuwe offerte:");
+        int telefoonnummer = input.nextInt();
+        int totaal = 0;
+
+
+        return new Offerte(offertenr,datum,naam,adres,telefoonnummer,totaal);
+    }
+
 }

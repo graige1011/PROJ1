@@ -25,11 +25,12 @@ public class Main {
         int userInput2 = 0;
         int userInput7 = 0;
         int optie = 0;
-        while (optie != 5) {
+        while (optie != 6) {
 
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
+                Offerte.createNewOfferte();q
                 menu.essentieelOpties();
                 menu.extraOpties();
                 int counter = 1;
@@ -95,7 +96,10 @@ public class Main {
                         optie = scanner.nextInt();} else {optie =5;}
                 }
             }
-            else if (optie == 2) {
+            else if (optie == 2){
+                // offertes bekijken code
+            }
+            else if (optie == 3) {
                 OnderdeelLijst.print_Alle_Onderdelen();
                 System.out.println("\n\nWil jij iets doen met de onderdelenlijst?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
                 userInput2 = scanner.nextInt();
@@ -155,7 +159,7 @@ public class Main {
                     menu.printMenu();
 
                 } }
-            else if (optie == 3) {
+            else if (optie == 4) {
                 Klant nieuweKlant = Klant.createNewKlant();
                 if (nieuweKlant != null) {
                     klanten.add(nieuweKlant);
@@ -176,7 +180,7 @@ public class Main {
                 }
 
                 }
-            else if (optie == 4) {
+            else if (optie == 5) {
 
                 int userInput5 = 0;
                 while(userInput5 != 2){
