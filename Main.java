@@ -30,7 +30,7 @@ public class Main {
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
-                Offerte.createNewOfferte();q
+                Offerte.createNewOfferte();
                 menu.essentieelOpties();
                 menu.extraOpties();
                 int counter = 1;
