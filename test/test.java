@@ -71,9 +71,9 @@ public class test {
     @Test
     public void testMilieuKorting(){
         Onderdeel testOnderdeel = new Onderdeel("testonderdeel", "testonderdeel", Categorie.ESSENTIEEL, 1, 1000, "testonderdeel", 0);
-        double verwachtePrijsOverheid = 1000 * Klanttype.Overheid.getKorting();
-        double verwachtePrijsBedrijf = 1000 * Klanttype.Bedrijf.getKorting();
-        double verwachtePrijsParticulier = 1000 * Klanttype.Particulier.getKorting();
+        double verwachtePrijsOverheid = 1000 * 0.8;
+        double verwachtePrijsBedrijf = 1000 * 0.9;
+        double verwachtePrijsParticulier = 1000 * 1.0;
 
         assertEquals(Klanttype.getKortingForKlanttype("Overheid")*testOnderdeel.getPrijs(), verwachtePrijsOverheid);
         assertEquals(Klanttype.getKortingForKlanttype("Bedrijf")*testOnderdeel.getPrijs(), verwachtePrijsBedrijf);
