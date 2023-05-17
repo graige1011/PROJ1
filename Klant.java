@@ -9,6 +9,8 @@ public class Klant {
     private String email;
     private Klanttype klanttype;
 
+
+
     public Klant(String voorNaam, String achterNaam, String email, Klanttype klanttype) {
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
@@ -140,5 +142,8 @@ public class Klant {
                 ", Email: " + email +
                 ", Klanttype: " + (klanttype != null ? klanttype.getNaam() : "Geen klanttype");
     }
+
 }
+
+
 
