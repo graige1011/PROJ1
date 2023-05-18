@@ -8,6 +8,9 @@ public class Main {
 
         ArrayList<Klant> klanten = new ArrayList<>();
         ArrayList<Offerte> offertes = new ArrayList<>();
+
+
+        offertes.add(new Offerte(1, "2023-05-18", "Test Offerte", "Address", 123456789, 1000.0));
         String[] asciiArt = {
                 " __  _      _          __  _             ",
                 "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
@@ -30,7 +33,7 @@ public class Main {
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
-                Offerte offerte= Offerte.createNewOfferte();
+                Offerte offerte= Offerte.createNewOfferte(); //graige hier e ta traha un offerte + onderdelen nobo pero e no ta hinke den e onderdelen pa mi por output esei nn si mi output optie 2 den main menu. si bo no a cop check app/bell mi
                 offertes.add(offerte);
                 menu.offerte = offerte;
                 menu.essentieelOpties();
@@ -101,8 +104,31 @@ public class Main {
                 }
             }
             else if (optie == 2){
-                // offertes bekijken code
+                System.out.println("Hier een lijst van alle offertes die in dit sessie gemaakt zijn\n\n");
+                ArrayList<String> names = new ArrayList<>();
+                for (int i = 0; i < offertes.size(); i++) {
+                    Offerte offerte = offertes.get(i);
+                    System.out.println((i + 1) + ". " + offerte.getBedrijfsnaam());
+                }
+                System.out.println("Wat wil jij verder iets doen met deze offertes?\n 1. Ik wil ze \n 2. Nee terug naar main menu");
+                userInput7 = scanner.nextInt();
+                if(userInput7 ==1){
+                    System.out.print("voer de nummer van de Offerte dat je wilt bekijken ");
+                    int offerteNumber = scanner.nextInt();
+                    Offerte selectedOfferte = null;
+                    for (Offerte offerte : offertes) {
+                        if (offerte.getOffertenr() == offerteNumber) {
+                            selectedOfferte = offerte;
+                            break;
+                        }
+                    }
+                }
+                else if(userInput7 == 2){
+                    menu.printMenu();
+                }
             }
+
+
             else if (optie == 3) {
                 OnderdeelLijst.print_Alle_Onderdelen();
                 System.out.println("\n\nWil jij iets doen met de onderdelenlijst?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
@@ -119,7 +145,7 @@ public class Main {
                     while (userInput3 != 3) { // Looping until user input 3 is == terug naar main menu
                         System.out.println("\nWat wil jij nog doen?\n 1. Nog meer onderdelen bijwerken\n 2. Nieuwe OnderdelenLijst bekijken\n 3. Breng mij terug naar main menu");
                         userInput3 = input.nextInt();
-                        input.nextLine(); // Consume newline character
+                        input.nextLine(); //  newline character
 
                         if (userInput3 == 1) {
                             OnderdeelLijst.bewerkOnderdeel(onderdelennieuw);
