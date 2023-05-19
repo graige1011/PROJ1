@@ -29,7 +29,6 @@ public class Main {
         int userInput7 = 0;
         int optie = 0;
         while (optie != 6) {
-
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
@@ -81,8 +80,7 @@ public class Main {
                 System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Print alweer het offerte met overzichtelijke totaalbedragen\n");
                 userInput7 = scanner.nextInt();
                 if (userInput7 == 1) {
-                    menu.printMenu();
-                    optie = scanner.nextInt();
+                    optie =2;
                 } else {
                     counter = 1;
                     offerte.offerteInfo();
@@ -99,8 +97,12 @@ public class Main {
                     System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Sluit het programma");
                     userInput2 = scanner.nextInt();
                     if (userInput2 == 1) {
-                        menu.printMenu();
-                        optie = scanner.nextInt();} else {optie =6;}
+                        optie = 2;
+                    }
+                    else
+                    {
+                        optie =6;
+                    }
                 }
             }
             else if (optie == 2){
@@ -124,7 +126,7 @@ public class Main {
                     }
                 }
                 else if(userInput7 == 2){
-                    menu.printMenu();
+                   optie =2;
                 }
             }
 
