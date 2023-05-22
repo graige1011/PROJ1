@@ -11,24 +11,25 @@ public class Main {
 
 
         offertes.add(new Offerte(1, "2023-05-18", "Test Offerte", "Address", 123456789, 1000.0));
-        String[] asciiArt = {
-                " __  _      _          __  _             ",
-                "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
-                "\\ \\ | '_ \\ | || '_ \\ | |_ | | / _ \\\\ \\/ /",
-                "_\\ \\| | | || || |_) ||  _|| ||  __/ >  < ",
-                "\\__/|_| |_||_|| .__/ |_|  |_| \\___|/_/\\_\\",
-                "              |_|                        "
-        };
 
-
-//        }
-        for (String line : asciiArt) {
-            System.out.println(line);
-        }
         int userInput2 = 0;
         int userInput7 = 0;
         int optie = 0;
         while (optie != 6) {
+            String[] asciiArt = {
+                    " __  _      _          __  _             ",
+                    "/ _\\| |__  (_) _ __   / _|| |  ___ __  __",
+                    "\\ \\ | '_ \\ | || '_ \\ | |_ | | / _ \\\\ \\/ /",
+                    "_\\ \\| | | || || |_) ||  _|| ||  __/ >  < ",
+                    "\\__/|_| |_||_|| .__/ |_|  |_| \\___|/_/\\_\\",
+                    "              |_|                        "
+            };
+
+
+//        }
+            for (String line : asciiArt) {
+                System.out.println(line);
+            }
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
@@ -106,28 +107,38 @@ public class Main {
                 }
             }
             else if (optie == 2){
-                System.out.println("Hier een lijst van alle offertes die in dit sessie gemaakt zijn\n\n");
+                System.out.println("Hier een lijst van alle offertes die in dit sessie gemaakt zijn\n");
                 ArrayList<String> names = new ArrayList<>();
                 for (int i = 0; i < offertes.size(); i++) {
                     Offerte offerte = offertes.get(i);
                     System.out.println((i + 1) + ". " + offerte.getBedrijfsnaam());
                 }
-                System.out.println("Wat wil jij verder iets doen met deze offertes?\n 1. Ik wil ze \n 2. Nee terug naar main menu");
-                userInput7 = scanner.nextInt();
-                if(userInput7 ==1){
-                    System.out.print("voer de nummer van de Offerte dat je wilt bekijken ");
-                    int offerteNumber = scanner.nextInt();
-                    Offerte selectedOfferte = null;
-                    for (Offerte offerte : offertes) {
-                        if (offerte.getOffertenr() == offerteNumber) {
-                            selectedOfferte = offerte;
-                            break;
+                 userInput7 = 0; // Initialize userInput7 with any value other than 2
+
+
+                while (userInput7 != 2) {
+                    System.out.println("\nWat wil jij verder iets doen met deze offertes?\n 1. Ik wil ze bekijken \n 2. Nee terug naar main menu");
+                    userInput7 = scanner.nextInt();
+
+                    if (userInput7 == 1) {
+                        System.out.print("Voer het nummer van de offerte in die je wilt bekijken: ");
+                        int offerteNumber = scanner.nextInt();
+                        Offerte selectedOfferte = null;
+
+                        for (Offerte offerte : offertes) {
+                            if (offerte.getOffertenr() == offerteNumber) {
+                                selectedOfferte = offerte;
+                                offerte.offerteInfo();
+                                break;
+                            }
                         }
+                    } else if (userInput7 == 2) {
+                        optie = 2;
                     }
                 }
-                else if(userInput7 == 2){
-                   optie =2;
-                }
+
+
+
             }
 
 

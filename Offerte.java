@@ -28,13 +28,7 @@ class Offerte{
         this.offertenr = offertenr;
     }
 
-//    public Onderdeel getOnderdeel() {
-//        return onderdeel;
-//    }
 
-//    public void setOnderdeel(Onderdeel onderdeel) {
-//        this.onderdeel = onderdeel;
-//    }
 
     public String getDatum() {
         return datum;
@@ -67,6 +61,8 @@ class Offerte{
     public void setTelefoonnr(int telefoonnr) {
         this.telefoonnr = telefoonnr;
     }
+
+
     public void offerteInfo(){
         System.out.println("Offerte Nr: "+ offertenr);
         System.out.println("Datum: "+ datum);
