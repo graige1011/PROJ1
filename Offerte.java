@@ -24,6 +24,7 @@ class Offerte{
         return offertenr;
     }
 
+
     public void setOffertenr(int offertenr) {
         this.offertenr = offertenr;
     }

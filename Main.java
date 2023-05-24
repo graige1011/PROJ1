@@ -33,7 +33,7 @@ public class Main {
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
-                Offerte offerte= Offerte.createNewOfferte(); //graige hier e ta traha un offerte + onderdelen nobo pero e no ta hinke den e onderdelen pa mi por output esei nn si mi output optie 2 den main menu. si bo no a cop check app/bell mi
+                Offerte offerte = Offerte.createNewOfferte(); //graige hier e ta traha un offerte + onderdelen nobo pero e no ta hinke den e onderdelen pa mi por output esei nn si mi output optie 2 den main menu. si bo no a cop check app/bell mi
                 offertes.add(offerte);
                 menu.offerte = offerte;
                 menu.essentieelOpties();
@@ -42,18 +42,18 @@ public class Main {
                 double totaalPrijs = 0.0;
                 double millieuKorting = 100;
                 offerte.offerteInfo();
-                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
-                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
+                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal", "Totaal");
+                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------", "---------------");
 
                 for (Onderdeel onderdeel : offerte.Onderdelen) {
                     double totaalOnderdeel = onderdeel.getAantal() * onderdeel.getPrijs();
                     double gottenMilleuKorting = onderdeel.getMilieuKorting();
-                    if(gottenMilleuKorting == 0){
+                    if (gottenMilleuKorting == 0) {
                         millieuKorting = 1;
                     } else {
                         millieuKorting = (millieuKorting - gottenMilleuKorting) / 100;
                     }
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(), totaalOnderdeel);
                     counter++;
                     //totaalprijs berekenen met korting
                     totaalPrijs += totaalOnderdeel * millieuKorting;
@@ -63,7 +63,7 @@ public class Main {
                 System.out.println("\nWat voor type klant ben jij?");
                 ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
                 for (int i = 0; i < klanttypes.size(); i++) {
-                    System.out.println((i+1) + ". " + klanttypes.get(i).getNaam());
+                    System.out.println((i + 1) + ". " + klanttypes.get(i).getNaam());
                 }
                 userInput2 = scanner.nextInt();
                 String naamklant = "";
@@ -77,45 +77,40 @@ public class Main {
                     System.out.println("Ongeldige invoer. Probeer opnieuw.");
                     // handle invalid input
                 }
-                System.out.printf("Totaal bedrag voor alle onderdelen met klanttype "+naamklant+": %.2f€",(kortingklant*totaalPrijs));
+                System.out.printf("Totaal bedrag voor alle onderdelen met klanttype " + naamklant + ": %.2f€", (kortingklant * totaalPrijs));
                 System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Print alweer het offerte met overzichtelijke totaalbedragen\n");
                 userInput7 = scanner.nextInt();
                 if (userInput7 == 1) {
-                    optie =2;
+                    optie = 2;
                 } else {
                     counter = 1;
                     offerte.offerteInfo();
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
-                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal", "Totaal");
+                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------", "---------------");
                     for (Onderdeel onderdeel : offerte.Onderdelen) {
                         double totaalOnderdeel = onderdeel.getAantal() * onderdeel.getPrijs();
-                        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
+                        System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(), totaalOnderdeel);
                         counter++;
                     }
                     System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
-                    System.out.printf("\nTotaal bedrag voor alle onderdelen met klanttype "+naamklant+"en milleukorting: %.2f€",(kortingklant*totaalPrijs));
+                    System.out.printf("\nTotaal bedrag voor alle onderdelen met klanttype " + naamklant + "en milleukorting: %.2f€", (kortingklant * totaalPrijs));
                     //hier beneden een vervolg voor als je doorwilt gaan met het programma gebruiken of als je het programma wilt sluiten
                     System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Sluit het programma");
                     userInput2 = scanner.nextInt();
                     if (userInput2 == 1) {
                         optie = 2;
-                    }
-                    else
-                    {
-                        optie =6;
+                    } else {
+                        optie = 6;
                     }
                 }
             }
             else if (optie == 2){
                 System.out.println("Hier een lijst van alle offertes die in dit sessie gemaakt zijn\n");
                 ArrayList<String> names = new ArrayList<>();
-                for (int i = 0; i < offertes.size(); i++) {
-                    Offerte offerte = offertes.get(i);
+                for (Offerte offerte : offertes) {
                     System.out.println(offerte.getOffertenr() + ". " + offerte.getBedrijfsnaam());
                 }
-                 userInput7 = 0; // Initialize userInput7 with any value other than 2
-
-
+                userInput7 = 0; // Initialize userInput7 with any value other than 2
                 while (userInput7 != 2) {
                     System.out.println("\nWat wil jij verder iets doen met deze offertes?\n 1. Ik wil ze bekijken \n 2. Nee terug naar main menu");
                     userInput7 = scanner.nextInt();
@@ -133,17 +128,17 @@ public class Main {
                                 int counter = 1;
                                 double millieuKorting = 100;
                                 double totaalPrijs = 0;
-                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
-                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
+                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal", "Totaal");
+                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------", "---------------");
                                 for (Onderdeel onderdeel : offerte.Onderdelen) {
                                     double totaalOnderdeel = onderdeel.getAantal() * onderdeel.getPrijs();
                                     double gottenMilleuKorting = onderdeel.getMilieuKorting();
-                                    if(gottenMilleuKorting == 0){
+                                    if (gottenMilleuKorting == 0) {
                                         millieuKorting = 1;
                                     } else {
                                         millieuKorting = (millieuKorting - gottenMilleuKorting) / 100;
                                     }
-                                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
+                                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(), totaalOnderdeel);
                                     counter++;
                                     totaalPrijs = totaalPrijs + totaalOnderdeel;
 
@@ -155,19 +150,13 @@ public class Main {
                             }
 
                         }
-                    }
-                    else if (userInput7 == 2) {
+                    } else if (userInput7 == 2) {
                         optie = 2;
                     }
                 }
-
-
-
             }
-
-
             else if (optie == 3) {
-                OnderdeelLijst.print_Alle_Onderdelen();
+                OnderdeelLijst.print_Alle_Onderdelen(); //hier moet het de nieuwe list uppullen
                 System.out.println("\n\nWil jij iets doen met de onderdelenlijst?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
                 userInput2 = scanner.nextInt();
                 if (userInput2 == 1) {
@@ -221,11 +210,12 @@ public class Main {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
                     }
-                } else if(userInput2 == 3){
+                } else if (userInput2 == 3) {
                     System.out.println("");
                     menu.printMenu();
 
-                } }
+                }
+            }
             else if (optie == 4) {
                 Klant nieuweKlant = Klant.createNewKlant();
                 if (nieuweKlant != null) {
@@ -246,11 +236,11 @@ public class Main {
                     menu.printMenu();
                 }
 
-                }
+            }
             else if (optie == 5) {
 
                 int userInput5 = 0;
-                while(userInput5 != 2){
+                while (userInput5 != 2) {
                     Klanttype.toonKlanttypes();
                     Klanttype nieuwKlanttype = Klanttype.maakNieuweKlanttype();
                     if (nieuwKlanttype != null) {
@@ -273,7 +263,8 @@ public class Main {
 
 
             }
-            }}
-
+        }
     }
+
+}
 

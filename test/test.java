@@ -69,6 +69,24 @@ public class test {
     }
 
     @Test
+    public void testCreateNewOfferte() { //keanu test gemaakt
+        // een string input gemaakt
+        String input = "1\n2023-05-24\nTest Company\nTest Address\n123456789\n";
+
+        // de system in voor de createofferte gemaakt
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        // Invoke the method to create a new Offerte
+        Offerte offerte = Offerte.createNewOfferte();
+
+        // Perform assertions to check if the created Offerte has the expected values
+        assertEquals(1, offerte.getOffertenr());
+        assertEquals("2023-05-24", offerte.getDatum());
+        assertEquals("Test Company", offerte.getBedrijfsnaam());
+        assertEquals("Test Address", offerte.getAdres());
+        assertEquals(123456789, offerte.getTelefoonnr());
+    }
+    @Test
     public void testMilieuKorting(){
         Onderdeel testOnderdeel = new Onderdeel("testonderdeel", "testonderdeel", Categorie.ESSENTIEEL, 1, 1000, "testonderdeel", 0);
         double verwachtePrijsOverheid = 1000 * 0.8;
