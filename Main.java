@@ -58,7 +58,7 @@ public class Main {
                     //totaalprijs berekenen met korting
                     totaalPrijs += totaalOnderdeel * millieuKorting;
                 }
-                System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
+                System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€\n", totaalPrijs);
                 Klanttype.toonKlanttypes();
                 System.out.println("\nWat voor type klant ben jij?");
                 ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
@@ -77,7 +77,7 @@ public class Main {
                     System.out.println("Ongeldige invoer. Probeer opnieuw.");
                     // handle invalid input
                 }
-                System.out.printf("Totaal bedrag voor alle onderdelen met klanttype "+naamklant+":%.2f€",(kortingklant*totaalPrijs));
+                System.out.printf("Totaal bedrag voor alle onderdelen met klanttype "+naamklant+": %.2f€",(kortingklant*totaalPrijs));
                 System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Print alweer het offerte met overzichtelijke totaalbedragen\n");
                 userInput7 = scanner.nextInt();
                 if (userInput7 == 1) {
@@ -93,7 +93,7 @@ public class Main {
                         counter++;
                     }
                     System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€", totaalPrijs);
-                    System.out.printf("\nTotaal bedrag voor alle onderdelen met klanttype "+naamklant+"en milleukorting:%.2f€",(kortingklant*totaalPrijs));
+                    System.out.printf("\nTotaal bedrag voor alle onderdelen met klanttype "+naamklant+"en milleukorting: %.2f€",(kortingklant*totaalPrijs));
                     //hier beneden een vervolg voor als je doorwilt gaan met het programma gebruiken of als je het programma wilt sluiten
                     System.out.println("\n\nWat wil je nu doen? \n 1.Terug naar main menu \n 2.Sluit het programma");
                     userInput2 = scanner.nextInt();
@@ -111,7 +111,7 @@ public class Main {
                 ArrayList<String> names = new ArrayList<>();
                 for (int i = 0; i < offertes.size(); i++) {
                     Offerte offerte = offertes.get(i);
-                    System.out.println((i + 1) + ". " + offerte.getBedrijfsnaam());
+                    System.out.println(offerte.getOffertenr() + ". " + offerte.getBedrijfsnaam());
                 }
                  userInput7 = 0; // Initialize userInput7 with any value other than 2
 
@@ -121,7 +121,7 @@ public class Main {
                     userInput7 = scanner.nextInt();
 
                     if (userInput7 == 1) {
-                        System.out.print("Voer het nummer van de offerte in die je wilt bekijken: ");
+                        System.out.print("Voer het offertenr van de offerte in die je wilt bekijken: ");
                         int offerteNumber = scanner.nextInt();
                         Offerte selectedOfferte = null;
 
@@ -129,10 +129,34 @@ public class Main {
                             if (offerte.getOffertenr() == offerteNumber) {
                                 selectedOfferte = offerte;
                                 offerte.offerteInfo();
+                                //Ik kan nieuwe offertes tonen met hun bijbehoorende onderdelen.
+                                int counter = 1;
+                                double millieuKorting = 100;
+                                double totaalPrijs = 0;
+                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting", "Aantal","Totaal");
+                                System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------", "---------------","---------------");
+                                for (Onderdeel onderdeel : offerte.Onderdelen) {
+                                    double totaalOnderdeel = onderdeel.getAantal() * onderdeel.getPrijs();
+                                    double gottenMilleuKorting = onderdeel.getMilieuKorting();
+                                    if(gottenMilleuKorting == 0){
+                                        millieuKorting = 1;
+                                    } else {
+                                        millieuKorting = (millieuKorting - gottenMilleuKorting) / 100;
+                                    }
+                                    System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s %-15d %-15s\n", counter, onderdeel.getNaam(), onderdeel.getOmschrijving(), onderdeel.getCategorie(), onderdeel.getPrijs(), onderdeel.getSoortOnderdeel(), onderdeel.getMilieuKorting(), onderdeel.getAantal(),totaalOnderdeel);
+                                    counter++;
+                                    totaalPrijs = totaalPrijs + totaalOnderdeel;
+
+
+                                }
+                                System.out.printf("\n\nTotaal bedrag voor alle onderdelen met milieu korting erbij: %.2f€\n", totaalPrijs);
+                                // loop breken eenmaal de offerte gevonden is
                                 break;
                             }
+
                         }
-                    } else if (userInput7 == 2) {
+                    }
+                    else if (userInput7 == 2) {
                         optie = 2;
                     }
                 }
