@@ -98,5 +98,30 @@ public class test {
         assertEquals(Klanttype.getKortingForKlanttype("Particulier")* testOnderdeel.getPrijs(), verwachtePrijsParticulier);
 
     }
+
+    @Test
+    public void bewerkKlantTest() {
+        // Arrange
+        ArrayList<Klant> klantenlijst = new ArrayList<>();
+        Klant klant = new Klant("John", "Doe", "john@example.com", Klanttype.Particulier);
+        klantenlijst.add(klant);
+
+        // Simulate user input using a mocked Scanner
+        String userInput = "1\nJohn\nDoe\njohn@example.com\n3\n";
+        InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inputStream);
+
+
+        // Act
+        Klant.bewerkKlant(klantenlijst);
+
+        // Assert
+        Klant updatedKlant = klantenlijst.get(0);
+        assertEquals("John", updatedKlant.getVoornaam());
+        assertEquals("Doe", updatedKlant.getAchternaam());
+        assertEquals("john@example.com", updatedKlant.getEmail());
+        assertEquals(Klanttype.Particulier, updatedKlant.getKlanttype());
+    }
+
 }
 
