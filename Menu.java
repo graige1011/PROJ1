@@ -108,7 +108,7 @@ class Menu {
             offerte.Onderdelen.add(dekOnderdeel);
             System.out.println("Successfully added");
         } else {
-            System.out.println("Invalid deck selection. Please try again.");
+            System.out.println("Invalid deck Selection. Please try again.");
         }
 
 
