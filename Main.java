@@ -2,6 +2,7 @@ import java.util.*;
 
 import java.util.Scanner;
 public class Main {
+    public static List<Onderdeel> onderdelennieuw = new ArrayList<>();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
@@ -9,6 +10,10 @@ public class Main {
         ArrayList<Klant> klanten = new ArrayList<>();
         ArrayList<Offerte> offertes = new ArrayList<>();
 
+        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        for (Onderdeel onderdeel : onderdelen) {
+            onderdelennieuw.add(onderdeel);
+        }
 
         offertes.add(new Offerte(1, "2023-05-18", "Test Offerte", "Address", 123456789, 1000.0));
 
@@ -156,22 +161,19 @@ public class Main {
                 }
             }
             else if (optie == 3) {
-                OnderdeelLijst.print_Alle_Onderdelen(); //hier moet het de nieuwe list uppullen
-                System.out.println("\n\nWil jij iets doen met de onderdelenlijst?\n 1. Ja, ik wil onderdelen wijzigingen\n 2. Ja, ik wil een nieuwe onderdeel aanmaken\n 3. Nee, breng mij terug naar main menu ");
+
+                OnderdeelLijst.print_Nieuwe_Onderdelen(onderdelennieuw);
+                System.out.println("\n\nWil jij iets doen met de onderdelenlijst?\n 1. Ja, ik wil onderdelen wijzigen\n 2. Ja, ik wil een nieuw onderdeel aanmaken\n 3. Nee, breng mij terug naar het hoofdmenu");
                 userInput2 = scanner.nextInt();
                 if (userInput2 == 1) {
-                    List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
-                    List<Onderdeel> onderdelennieuw = new ArrayList<Onderdeel>();
-                    for (Onderdeel onderdeel : onderdelen) {
-                        onderdelennieuw.add(onderdeel);
-                    }
+
                     OnderdeelLijst.bewerkOnderdeel(onderdelennieuw);
                     Scanner input = new Scanner(System.in);
-                    int userInput3 = 0; // Initialize userInput2 to a default value
-                    while (userInput3 != 3) { // Looping until user input 3 is == terug naar main menu
-                        System.out.println("\nWat wil jij nog doen?\n 1. Nog meer onderdelen bijwerken\n 2. Nieuwe OnderdelenLijst bekijken\n 3. Breng mij terug naar main menu");
+                    int userInput3 = 0; // Initialize userInput3 to a default value
+                    while (userInput3 != 3) { // Looping until user input 3 is "terug naar het hoofdmenu"
+                        System.out.println("\nWat wil jij nog doen?\n 1. Nog meer onderdelen bijwerken\n 2. Nieuwe onderdelenlijst bekijken\n 3. Breng mij terug naar het hoofdmenu");
                         userInput3 = input.nextInt();
-                        input.nextLine(); //  newline character
+                        input.nextLine(); // Consume newline character
 
                         if (userInput3 == 1) {
                             OnderdeelLijst.bewerkOnderdeel(onderdelennieuw);
@@ -184,18 +186,14 @@ public class Main {
                         }
                     }
                 } else if (userInput2 == 2) {
-                    List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
-                    List<Onderdeel> onderdelennieuw = new ArrayList<Onderdeel>();
-                    for (Onderdeel onderdeel : onderdelen) {
-                        onderdelennieuw.add(onderdeel);
-                    }
+
 
                     Onderdeel nieuweOnderdeel = OnderdeelLijst.maakNieuweOnderdeel();
                     onderdelennieuw.add(nieuweOnderdeel);
                     Scanner input = new Scanner(System.in);
-                    int userInput3 = 0; // Initialize userInput2 to a default value
-                    while (userInput3 != 3) { // Looping until user input 3 is == terug naar main menu
-                        System.out.println("\nWat wil jij nog doen?\n 1. Nog meer nieuwe onderdelen maken\n 2. Nieuwe OnderdelenLijst bekijken\n 3. Breng mij terug naar main menu");
+                    int userInput3 = 0; // Initialize userInput3 to a default value
+                    while (userInput3 != 3) { // Looping until user input 3 is "terug naar het hoofdmenu"
+                        System.out.println("\nWat wil jij nog doen?\n 1. Nog meer nieuwe onderdelen maken\n 2. Nieuwe onderdelenlijst bekijken\n 3. Breng mij terug naar het hoofdmenu");
                         userInput3 = input.nextInt();
                         input.nextLine(); // Consume newline character
 
@@ -205,7 +203,7 @@ public class Main {
                         } else if (userInput3 == 2) {
                             OnderdeelLijst.print_Nieuwe_Onderdelen(onderdelennieuw);
                         } else if (userInput3 == 3) {
-                            menu.printMenu();
+                            userInput3 = 3;
                         } else {
                             System.out.println("Ongeldige keuze, probeer opnieuw");
                         }
@@ -213,7 +211,6 @@ public class Main {
                 } else if (userInput2 == 3) {
                     System.out.println("");
                     menu.printMenu();
-
                 }
             }
             else if (optie == 4) {

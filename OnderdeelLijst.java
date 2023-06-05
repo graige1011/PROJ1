@@ -62,9 +62,23 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
-    public static void print_Alle_Extraonderdelen() {
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
 
+    public static List<Onderdeel> getExtraOnderdelen() {
+        List<Onderdeel> extraOnderdelen = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw; // Assuming onderdelennieuw is the list that contains all onderdelen
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getCategorie().equals(Categorie.EXTRA)) {
+                extraOnderdelen.add(onderdeel);
+            }
+        }
+
+        return extraOnderdelen;
+    }
+    public static void print_Alle_Extraonderdelen() {
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
+        List<Onderdeel> extraOnderdelen = getExtraOnderdelen();
         // De css voor de tabel van Extraonderdeellijst
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------");
@@ -79,9 +93,26 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
-    public static void print_Alle_Rompen() {
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
 
+
+    public static List<Onderdeel> getRompen() {
+        List<Onderdeel> rompen = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw; // Assuming onderdelennieuw is the list that contains all onderdelen
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("ROMP")) {
+                rompen.add(onderdeel);
+            }
+        }
+
+        return rompen;
+    }
+
+    public static void print_Alle_Rompen() {
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+
+        List<Onderdeel> rompen = getRompen();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "---", "-----------------------------------", "------------------------------------------------------------", "-----------", "-----------", "---------------", "---------------");
@@ -96,8 +127,27 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
+
+
+
+    public static List<Onderdeel> getEngines() {
+        List<Onderdeel> engines = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw; // Assuming onderdelennieuw is the list that contains all onderdelen
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("ENGINE")) {
+                engines.add(onderdeel);
+            }
+        }
+
+        return engines;
+    }
+
     public static void print_Alle_Engines() {
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> engines = getEngines();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
@@ -113,8 +163,25 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
+
+
+    public static List<Onderdeel> getRoeren() {
+        List<Onderdeel> roeren = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("ROER")) {
+                roeren.add(onderdeel);
+            }
+        }
+
+        return roeren;
+    }
     public static void print_Alle_Roeren() {
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> roeren = getRoeren();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
@@ -130,8 +197,23 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
+    public static List<Onderdeel> getDekken() {
+        List<Onderdeel> dekken = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw; // Assuming onderdelennieuw is the list that contains all onderdelen
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("DEK")) {
+                dekken.add(onderdeel);
+            }
+        }
+
+        return dekken;
+    }
     public static void print_Alle_Dekken() {
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> dekken = getDekken();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
@@ -147,8 +229,25 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
+
+
+    public static List<Onderdeel> getElektrischeSystemen() {
+        List<Onderdeel> elektrischeSystemen = new ArrayList<>();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw; // Assuming onderdelennieuw is the list that contains all onderdelen
+
+        for (Onderdeel onderdeel : onderdelen) {
+            if (onderdeel.getSoortOnderdeel().equals("ELEKSYS")) {
+                elektrischeSystemen.add(onderdeel);
+            }
+        }
+
+        return elektrischeSystemen;
+    }
     public static void print_Alle_ElektrischeSystemen() { // functie voor het printen van alle elektrische systemen
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> elektrischeSystemen = getElektrischeSystemen();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
@@ -164,8 +263,10 @@ public class OnderdeelLijst extends Onderdeel {
         }
     }
 
+
     public static void print_Alle_Navigatie() { //functie voor het printen van alle rompen
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
@@ -182,7 +283,8 @@ public class OnderdeelLijst extends Onderdeel {
     }
 
     public static void print_Alle_Tanks() { //functie voor het printen van alle rompen
-        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+//        List<Onderdeel> onderdelen = OnderdeelLijst.createOnderdelen();
+        List<Onderdeel> onderdelen = Main.onderdelennieuw;
 
         // De css voor de tabel
         System.out.printf("%-4s %-35s %-60s %-15s %-15s %-15s %-15s\n", "Nr.", "Onderdeelnaam", "Omschrijving", "Categorie", "Stukprijs", "Soort onderdeel", "Milieu korting");
