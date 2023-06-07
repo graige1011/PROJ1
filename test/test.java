@@ -123,5 +123,35 @@ public class test {
         assertEquals(Klanttype.Particulier, updatedKlant.getKlanttype());
     }
 
+    @Test
+    public void testPrintMenu() {
+        // Redirect the standard output to capture the printed menu
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Create a Menu object
+        Menu menu = new Menu();
+
+        // Call the printMenu() method
+        menu.printMenu();
+
+        // Get the printed menu from the output stream
+        String printedMenu = outputStream.toString();
+
+        // Verify that the menu is not empty
+        assertNotNull(printedMenu);
+
+        // Verify that the menu contains expected strings
+        assertTrue(printedMenu.contains("Welcome bij Shipflex"));
+        assertTrue(printedMenu.contains("Ik wil een offerte maken"));
+        assertTrue(printedMenu.contains("Ik wil alle offertes bekijken"));
+        assertTrue(printedMenu.contains("Ik wil kijken welke onderdelen beschikbaar zijn"));
+        assertTrue(printedMenu.contains("Ik wil een nieuwe klant aanmaken"));
+        assertTrue(printedMenu.contains("Ik wil een nieuwe klanttype aanmaken"));
+        assertTrue(printedMenu.contains("Sluiten"));
+    }
+
+
+
 }
 

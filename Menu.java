@@ -4,16 +4,17 @@ import java.util.Scanner;
 class Menu {
     Offerte offerte;
     Scanner scanner= new Scanner(System.in);
-    public void printMenu(){
+    public void printMenu() {
         System.out.println("\nWelcome bij Shipflex");
-        System.out.println("Met wat kan ik u helpen vandaag?\n 1. Ik wil een offerte maken\n 2. Ik wil alle offertes bekijken\n " +
-                "3. Ik wil kijken welke onderdelen beschikbaar zijn " +
-                "\n 4. Ik wil een nieuwe klant aanmaken" +
-                "\n 5.Ik wil een nieuwe klanttype aanmaken  " +
-                "\n 6.Sluiten");
-
-
+        System.out.println("Met wat kan ik u helpen vandaag?");
+        System.out.println("1. Ik wil een offerte maken");
+        System.out.println("2. Ik wil alle offertes bekijken");
+        System.out.println("3. Ik wil kijken welke onderdelen beschikbaar zijn");
+        System.out.println("4. Ik wil een nieuwe klant aanmaken");
+        System.out.println("5. Ik wil een nieuwe klanttype aanmaken");
+        System.out.println("6. Sluiten");
     }
+
     public void essentieelOpties(){ // deze functie print alle essentiele opties
         System.out.println("Oke laten wij beginnen met het bouwen van een schip!\nWelke romp zou u willen? ");
         OnderdeelLijst.print_Alle_Rompen();
