@@ -38,6 +38,7 @@ public class Main {
             menu.printMenu();
             optie = scanner.nextInt();
             if (optie == 1) {
+
                 Offerte offerte = Offerte.createNewOfferte(); //graige hier e ta traha un offerte + onderdelen nobo pero e no ta hinke den e onderdelen pa mi por output esei nn si mi output optie 2 den main menu. si bo no a cop check app/bell mi
                 offertes.add(offerte);
                 menu.offerte = offerte;

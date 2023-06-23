@@ -65,18 +65,25 @@ public class Klant {
         String achterNaam = input.nextLine();
         System.out.println("Voer het e-mailadres in van de nieuwe klant:");
         String email = input.nextLine();
-        System.out.println("Wat voor klanttype heeft de nieuwe klant?\n 1.Overheid \n 2.Bedrijf \n 3.Particulier ");
+
+        ArrayList<Klanttype> klanttypes = Klanttype.getKlanttypes();
+        for (int i = 0; i < klanttypes.size(); i++) {
+            System.out.println((i + 1) + ". " + klanttypes.get(i).getNaam());
+        }
         int userInput = input.nextInt();
-        if (userInput == 1) {
-            return new Klant(voorNaam, achterNaam, email, Klanttype.Overheid);
-        } else if (userInput == 2) {
-            return new Klant(voorNaam, achterNaam, email, Klanttype.Bedrijf);
-        } else if (userInput == 3) {
-            return new Klant(voorNaam, achterNaam, email, Klanttype.Particulier);
+        input.nextLine(); // Consume the remaining newline character
+
+        if (userInput >= 1 && userInput <= klanttypes.size()) {
+            Klanttype selectedKlanttype = klanttypes.get(userInput - 1);
+            return new Klant(voorNaam, achterNaam, email, selectedKlanttype);
+        } else {
+            System.out.println("Ongeldige invoer. Probeer opnieuw.");
+            // handle invalid input
         }
 
         return null;
     }
+
 
     public static void bewerkKlant(ArrayList<Klant> klantenlijst ){
         Scanner input = new Scanner(System.in);
