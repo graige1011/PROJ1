@@ -70,20 +70,20 @@ public class test {
 
     @Test
     public void testCreateNewOfferte() { //keanu test gemaakt
-        // een string input gemaakt
-        String input = "1\n2023-05-24\nTest Company\nTest Address\n123456789\n";
+        // een string Input Gemaakt
+        String input = "1\n2023-05-24\nTest Bedrijf\nTest Adres\n123456789\n";
 
-        // de system in voor de createofferte gemaakt
+        // De system in wordt ingesteld voor het maken van de offerte
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        // Invoke the method to create a new Offerte
+        // Roep de methode aan om een nieuwe offerte te maken
         Offerte offerte = Offerte.createNewOfferte();
 
-        // Perform assertions to check if the created Offerte has the expected values
+        // Voer assertions uit om te controleren of de gemaakte offerte de verwachte waarden heeft
         assertEquals(1, offerte.getOffertenr());
         assertEquals("2023-05-24", offerte.getDatum());
-        assertEquals("Test Company", offerte.getBedrijfsnaam());
-        assertEquals("Test Address", offerte.getAdres());
+        assertEquals("Test Bedrijf", offerte.getBedrijfsnaam());
+        assertEquals("Test Adres", offerte.getAdres());
         assertEquals(123456789, offerte.getTelefoonnr());
     }
     @Test
