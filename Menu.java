@@ -164,10 +164,11 @@ class Menu {
                 } else {
                     System.out.println("Invalid extra optie selection. Please try again.");
                 }
+                System.out.println("Wil je nog een extra? 1.Ja 2.Nee");
+            userInput = scanner.nextInt();
+
 
             }
-            System.out.println("Wil je nog een extra? 1.Ja 2.Nee");
-            userInput = scanner.nextInt();
 
 
 
